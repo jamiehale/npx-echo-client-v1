@@ -10,6 +10,7 @@ import ClickAwayListener from "@material-ui/core/ClickAwayListener";
 import Hidden from "@material-ui/core/Hidden";
 import Poppers from "@material-ui/core/Popper";
 import Divider from "@material-ui/core/Divider";
+import Typography from "@material-ui/core/Typography";
 // @material-ui/icons
 import Person from "@material-ui/icons/Person";
 import Notifications from "@material-ui/icons/Notifications";
@@ -20,6 +21,7 @@ import CustomInput from "components/CustomInput/CustomInput.js";
 import Button from "components/CustomButtons/Button.js";
 
 import styles from "assets/jss/material-dashboard-react/components/headerLinksStyle.js";
+import { Card, CardContent } from "@material-ui/core";
 
 const useStyles = makeStyles(styles);
 
@@ -189,27 +191,16 @@ export default function AdminNavbarLinks() {
             >
               <Paper>
                 <ClickAwayListener onClickAway={handleCloseProfile}>
-                  <MenuList role="menu">
-                    <MenuItem
-                      onClick={handleCloseProfile}
-                      className={classes.dropdownItem}
-                    >
-                      Profile
-                    </MenuItem>
-                    <MenuItem
-                      onClick={handleCloseProfile}
-                      className={classes.dropdownItem}
-                    >
-                      Settings
-                    </MenuItem>
-                    <Divider light />
-                    <MenuItem
-                      onClick={handleCloseProfile}
-                      className={classes.dropdownItem}
-                    >
-                      Logout
-                    </MenuItem>
-                  </MenuList>
+                  <Card>
+                    <CardContent>
+                    <Typography className={classes.title} color="textSecondary" gutterBottom>
+                      HALE, Jamie
+                    </Typography>
+                    <Typography variant="body2" component="p">
+                      Last login: 2020-02-14
+                    </Typography>
+                    </CardContent>
+                  </Card>
                 </ClickAwayListener>
               </Paper>
             </Grow>
