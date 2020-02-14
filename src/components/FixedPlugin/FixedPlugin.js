@@ -1,5 +1,5 @@
 /*eslint-disable*/
-import React, { Component } from "react";
+import React, { useState } from "react";
 // nodejs library to set properties for components
 import PropTypes from "prop-types";
 // nodejs library that concatenates classes
@@ -12,20 +12,30 @@ import imagine4 from "assets/img/sidebar-4.jpg";
 
 import Button from "components/CustomButtons/Button.js";
 
-export default function FixedPlugin(props) {
-  const [classes, setClasses] = React.useState("dropdown show");
-  const [bg_checked, setBg_checked] = React.useState(true);
-  const [bgImage, setBgImage] = React.useState(props.bgImage);
+const FixedPlugin = ({
+  bgImage: initialBgImage,
+  bgColor,
+  handleFixedClick,
+  handleColorClick,
+  handleImageClick,
+  rtlActive,
+  fixedClasses,
+}) => {
+  const [classes, setClasses] = useState("dropdown show");
+  const [bg_checked, setBg_checked] = useState(true);
+  const [bgImage, setBgImage] = useState(initialBgImage);
+
   const handleClick = () => {
-    props.handleFixedClick();
+    handleFixedClick();
   };
+  
   return (
     <div
       className={classnames("fixed-plugin", {
-        "rtl-fixed-plugin": props.rtlActive
+        "rtl-fixed-plugin": rtlActive
       })}
     >
-      <div id="fixedPluginClasses" className={props.fixedClasses}>
+      <div id="fixedPluginClasses" className={fixedClasses}>
         <div onClick={handleClick}>
           <i className="fa fa-cog fa-2x" />
         </div>
@@ -36,57 +46,57 @@ export default function FixedPlugin(props) {
               <div>
                 <span
                   className={
-                    props.bgColor === "purple"
+                    bgColor === "purple"
                       ? "badge filter badge-purple active"
                       : "badge filter badge-purple"
                   }
                   data-color="purple"
                   onClick={() => {
-                    props.handleColorClick("purple");
+                    handleColorClick("purple");
                   }}
                 />
                 <span
                   className={
-                    props.bgColor === "blue"
+                    bgColor === "blue"
                       ? "badge filter badge-blue active"
                       : "badge filter badge-blue"
                   }
                   data-color="blue"
                   onClick={() => {
-                    props.handleColorClick("blue");
+                    handleColorClick("blue");
                   }}
                 />
                 <span
                   className={
-                    props.bgColor === "green"
+                    bgColor === "green"
                       ? "badge filter badge-green active"
                       : "badge filter badge-green"
                   }
                   data-color="green"
                   onClick={() => {
-                    props.handleColorClick("green");
+                    handleColorClick("green");
                   }}
                 />
                 <span
                   className={
-                    props.bgColor === "red"
+                    bgColor === "red"
                       ? "badge filter badge-red active"
                       : "badge filter badge-red"
                   }
                   data-color="red"
                   onClick={() => {
-                    props.handleColorClick("red");
+                    handleColorClick("red");
                   }}
                 />
                 <span
                   className={
-                    props.bgColor === "orange"
+                    bgColor === "orange"
                       ? "badge filter badge-orange active"
                       : "badge filter badge-orange"
                   }
                   data-color="orange"
                   onClick={() => {
-                    props.handleColorClick("orange");
+                    handleColorClick("orange");
                   }}
                 />
               </div>
@@ -98,7 +108,7 @@ export default function FixedPlugin(props) {
               className="img-holder switch-trigger"
               onClick={() => {
                 setBgImage(imagine1);
-                props.handleImageClick(imagine1);
+                handleImageClick(imagine1);
               }}
             >
               <img src={imagine1} alt="..." />
@@ -109,7 +119,7 @@ export default function FixedPlugin(props) {
               className="img-holder switch-trigger"
               onClick={() => {
                 setBgImage(imagine2);
-                props.handleImageClick(imagine2);
+                handleImageClick(imagine2);
               }}
             >
               <img src={imagine2} alt="..." />
@@ -120,7 +130,7 @@ export default function FixedPlugin(props) {
               className="img-holder switch-trigger"
               onClick={() => {
                 setBgImage(imagine3);
-                props.handleImageClick(imagine3);
+                handleImageClick(imagine3);
               }}
             >
               <img src={imagine3} alt="..." />
@@ -131,7 +141,7 @@ export default function FixedPlugin(props) {
               className="img-holder switch-trigger"
               onClick={() => {
                 setBgImage(imagine4);
-                props.handleImageClick(imagine4);
+                handleImageClick(imagine4);
               }}
             >
               <img src={imagine4} alt="..." />
@@ -177,7 +187,7 @@ export default function FixedPlugin(props) {
       </div>
     </div>
   );
-}
+};
 
 FixedPlugin.propTypes = {
   bgImage: PropTypes.string,
@@ -188,3 +198,5 @@ FixedPlugin.propTypes = {
   handleColorClick: PropTypes.func,
   handleImageClick: PropTypes.func
 };
+
+export default FixedPlugin;
