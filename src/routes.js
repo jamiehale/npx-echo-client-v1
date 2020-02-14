@@ -47,7 +47,7 @@ const dashboardRoutes = [
   },
   {
     path: "/user",
-    name: "User Profile",
+    name: "2",
     rtlName: "ملف تعريفي للمستخدم",
     icon: Person,
     component: UserProfile,
@@ -55,7 +55,7 @@ const dashboardRoutes = [
   },
   {
     path: "/table",
-    name: "Table List",
+    name: "3",
     rtlName: "قائمة الجدول",
     icon: "content_paste",
     component: TableList,
@@ -63,7 +63,7 @@ const dashboardRoutes = [
   },
   {
     path: "/typography",
-    name: "Typography",
+    name: "4",
     rtlName: "طباعة",
     icon: LibraryBooks,
     component: Typography,
@@ -71,7 +71,7 @@ const dashboardRoutes = [
   },
   {
     path: "/icons",
-    name: "Icons",
+    name: "5",
     rtlName: "الرموز",
     icon: BubbleChart,
     component: Icons,
@@ -79,7 +79,7 @@ const dashboardRoutes = [
   },
   {
     path: "/maps",
-    name: "Maps",
+    name: "6",
     rtlName: "خرائط",
     icon: LocationOn,
     component: Maps,
@@ -87,7 +87,7 @@ const dashboardRoutes = [
   },
   {
     path: "/notifications",
-    name: "Notifications",
+    name: "7",
     rtlName: "إخطارات",
     icon: Notifications,
     component: NotificationsPage,
@@ -95,20 +95,12 @@ const dashboardRoutes = [
   },
   {
     path: "/rtl-page",
-    name: "RTL Support",
+    name: "8",
     rtlName: "پشتیبانی از راست به چپ",
     icon: Language,
     component: RTLPage,
     layout: "/rtl"
   },
-  {
-    path: "/upgrade-to-pro",
-    name: "Upgrade To PRO",
-    rtlName: "التطور للاحترافية",
-    icon: Unarchive,
-    component: UpgradeToPro,
-    layout: "/admin"
-  }
 ];
 
 export default dashboardRoutes;
