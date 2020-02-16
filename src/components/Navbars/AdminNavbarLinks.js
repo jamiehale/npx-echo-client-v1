@@ -11,6 +11,7 @@ import Hidden from "@material-ui/core/Hidden";
 import Poppers from "@material-ui/core/Popper";
 import Typography from "@material-ui/core/Typography";
 // @material-ui/icons
+import SettingsIcon from '@material-ui/icons/Settings';
 import Person from "@material-ui/icons/Person";
 import Notifications from "@material-ui/icons/Notifications";
 import Search from "@material-ui/icons/Search";
@@ -72,7 +73,10 @@ export default function AdminNavbarLinks() {
         aria-label="Settings"
         className={classes.buttonLink}
       >
-        <i className="fa fa-cog" />
+        <SettingsIcon className={classes.icons} />
+        <Hidden mdUp implementation="css">
+          <p className={classes.linkText}>Settings</p>
+        </Hidden>
       </Button>
       <div className={classes.manager}>
         <Button
