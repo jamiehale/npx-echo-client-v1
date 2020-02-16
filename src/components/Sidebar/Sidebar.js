@@ -15,17 +15,26 @@ import Icon from "@material-ui/core/Icon";
 import AdminNavbarLinks from "components/Navbars/AdminNavbarLinks.js";
 import RTLNavbarLinks from "components/Navbars/RTLNavbarLinks.js";
 
-import styles from "assets/jss/material-dashboard-react/components/sidebarStyle.js";
+import styles from "./sidebarStyle.js";
 
 const useStyles = makeStyles(styles);
 
-export default function Sidebar(props) {
+const Sidebar = ({
+  color,
+  logo,
+  image,
+  logoText,
+  routes,
+  rtlActive,
+  open,
+  handleDrawerToggle,
+}) => {
   const classes = useStyles();
-  // verifies if routeName is the one active (in browser input)
-  function activeRoute(routeName) {
+  
+  const activeRoute = (routeName) => {
     return window.location.href.indexOf(routeName) > -1 ? true : false;
-  }
-  const { color, logo, image, logoText, routes } = props;
+  };
+
   var links = (
     <List className={classes.list}>
       {routes.map((prop, key) => {
@@ -46,7 +55,7 @@ export default function Sidebar(props) {
               {typeof prop.icon === "string" ? (
                 <Icon
                   className={classNames(classes.itemIcon, whiteFontClasses, {
-                    [classes.itemIconRTL]: props.rtlActive
+                    [classes.itemIconRTL]: rtlActive
                   })}
                 >
                   {prop.icon}
@@ -54,14 +63,14 @@ export default function Sidebar(props) {
               ) : (
                 <prop.icon
                   className={classNames(classes.itemIcon, whiteFontClasses, {
-                    [classes.itemIconRTL]: props.rtlActive
+                    [classes.itemIconRTL]: rtlActive
                   })}
                 />
               )}
               <ListItemText
-                primary={props.rtlActive ? prop.rtlName : prop.name}
+                primary={rtlActive ? prop.rtlName : prop.name}
                 className={classNames(classes.itemText, whiteFontClasses, {
-                  [classes.itemTextRTL]: props.rtlActive
+                  [classes.itemTextRTL]: rtlActive
                 })}
                 disableTypography={true}
               />
@@ -71,12 +80,13 @@ export default function Sidebar(props) {
       })}
     </List>
   );
+
   var brand = (
     <div className={classes.logo}>
       <a
         href="https://www.creative-tim.com?ref=mdr-sidebar"
         className={classNames(classes.logoLink, {
-          [classes.logoLinkRTL]: props.rtlActive
+          [classes.logoLinkRTL]: rtlActive
         })}
         target="_blank"
       >
@@ -87,26 +97,27 @@ export default function Sidebar(props) {
       </a>
     </div>
   );
+  
   return (
     <div>
       <Hidden mdUp implementation="css">
         <Drawer
           variant="temporary"
-          anchor={props.rtlActive ? "left" : "right"}
-          open={props.open}
+          anchor={rtlActive ? "left" : "right"}
+          open={open}
           classes={{
             paper: classNames(classes.drawerPaper, {
-              [classes.drawerPaperRTL]: props.rtlActive
+              [classes.drawerPaperRTL]: rtlActive
             })
           }}
-          onClose={props.handleDrawerToggle}
+          onClose={handleDrawerToggle}
           ModalProps={{
             keepMounted: true // Better open performance on mobile.
           }}
         >
           {brand}
           <div className={classes.sidebarWrapper}>
-            {props.rtlActive ? <RTLNavbarLinks /> : <AdminNavbarLinks />}
+            {rtlActive ? <RTLNavbarLinks /> : <AdminNavbarLinks />}
             {links}
           </div>
           {image !== undefined ? (
@@ -119,12 +130,12 @@ export default function Sidebar(props) {
       </Hidden>
       <Hidden smDown implementation="css">
         <Drawer
-          anchor={props.rtlActive ? "right" : "left"}
+          anchor={rtlActive ? "right" : "left"}
           variant="permanent"
           open
           classes={{
             paper: classNames(classes.drawerPaper, {
-              [classes.drawerPaperRTL]: props.rtlActive
+              [classes.drawerPaperRTL]: rtlActive
             })
           }}
         >
@@ -140,7 +151,7 @@ export default function Sidebar(props) {
       </Hidden>
     </div>
   );
-}
+};
 
 Sidebar.propTypes = {
   rtlActive: PropTypes.bool,
@@ -152,3 +163,5 @@ Sidebar.propTypes = {
   routes: PropTypes.arrayOf(PropTypes.object),
   open: PropTypes.bool
 };
+
+export default Sidebar;
