@@ -1,33 +1,52 @@
-import React from "react";
-import classNames from "classnames";
-// @material-ui/core components
-import { makeStyles } from "@material-ui/core/styles";
-import MenuItem from "@material-ui/core/MenuItem";
-import MenuList from "@material-ui/core/MenuList";
-import Grow from "@material-ui/core/Grow";
-import Paper from "@material-ui/core/Paper";
-import ClickAwayListener from "@material-ui/core/ClickAwayListener";
-import Hidden from "@material-ui/core/Hidden";
-import Poppers from "@material-ui/core/Popper";
-import Typography from "@material-ui/core/Typography";
-// @material-ui/icons
+import React from 'react';
+import classNames from 'classnames';
+import { makeStyles } from '@material-ui/core/styles';
+import MenuItem from '@material-ui/core/MenuItem';
+import MenuList from '@material-ui/core/MenuList';
+import Grow from '@material-ui/core/Grow';
+import Paper from '@material-ui/core/Paper';
+import ClickAwayListener from '@material-ui/core/ClickAwayListener';
+import Hidden from '@material-ui/core/Hidden';
+import Poppers from '@material-ui/core/Popper';
+import Typography from '@material-ui/core/Typography';
 import SettingsIcon from '@material-ui/icons/Settings';
-import Person from "@material-ui/icons/Person";
-import Notifications from "@material-ui/icons/Notifications";
-import Search from "@material-ui/icons/Search";
-// core components
-import CustomInput from "components/CustomInput/CustomInput.js";
-import Button from "components/CustomButtons/Button.js";
+import Person from '@material-ui/icons/Person';
+import Notifications from '@material-ui/icons/Notifications';
+import SearchIcon from '@material-ui/icons/Search';
+import { Card, CardContent } from '@material-ui/core';
+import CustomInput from 'components/CustomInput/CustomInput';
+import Button from 'components/CustomButtons/Button';
 
-import styles from "assets/jss/material-dashboard-react/components/headerLinksStyle.js";
-import { Card, CardContent } from "@material-ui/core";
+import styles from './headerLinksStyle';
+
+const Search = ({
+  classes,
+}) => (
+  <div className={classes.searchWrapper}>
+    <CustomInput
+      formControlProps={{
+        className: classNames(classes.margin, classes.search),
+      }}
+      inputProps={{
+        placeholder: 'Search',
+        inputProps: {
+          'aria-label': 'Search'
+        }
+      }}
+    />
+    <Button color="white" aria-label="edit" justIcon round>
+      <SearchIcon />
+    </Button>
+  </div>
+);
 
 const useStyles = makeStyles(styles);
 
-export default function AdminNavbarLinks() {
+const AdminNavbarLinks = () => {
   const classes = useStyles();
   const [openNotification, setOpenNotification] = React.useState(null);
   const [openProfile, setOpenProfile] = React.useState(null);
+
   const handleClickNotification = event => {
     if (openNotification && openNotification.contains(event.target)) {
       setOpenNotification(null);
@@ -35,9 +54,11 @@ export default function AdminNavbarLinks() {
       setOpenNotification(event.currentTarget);
     }
   };
+
   const handleCloseNotification = () => {
     setOpenNotification(null);
   };
+
   const handleClickProfile = event => {
     if (openProfile && openProfile.contains(event.target)) {
       setOpenProfile(null);
@@ -45,45 +66,34 @@ export default function AdminNavbarLinks() {
       setOpenProfile(event.currentTarget);
     }
   };
+
   const handleCloseProfile = () => {
     setOpenProfile(null);
   };
+
   return (
     <div>
-      <div className={classes.searchWrapper}>
-        <CustomInput
-          formControlProps={{
-            className: classes.margin + " " + classes.search
-          }}
-          inputProps={{
-            placeholder: "Search",
-            inputProps: {
-              "aria-label": "Search"
-            }
-          }}
-        />
-        <Button color="white" aria-label="edit" justIcon round>
-          <Search />
-        </Button>
-      </div>
-      <Button
-        color={window.innerWidth > 959 ? "transparent" : "white"}
-        justIcon={window.innerWidth > 959}
-        simple={!(window.innerWidth > 959)}
-        aria-label="Settings"
-        className={classes.buttonLink}
-      >
-        <SettingsIcon className={classes.icons} />
-        <Hidden mdUp implementation="css">
-          <p className={classes.linkText}>Settings</p>
-        </Hidden>
-      </Button>
+      <Search classes={classes} />
       <div className={classes.manager}>
         <Button
-          color={window.innerWidth > 959 ? "transparent" : "white"}
+          color={window.innerWidth > 959 ? 'transparent' : 'white'}
           justIcon={window.innerWidth > 959}
           simple={!(window.innerWidth > 959)}
-          aria-owns={openNotification ? "notification-menu-list-grow" : null}
+          aria-label="Settings"
+          className={classes.buttonLink}
+        >
+          <SettingsIcon className={classes.icons} />
+          <Hidden mdUp implementation="css">
+            <p className={classes.linkText}>Settings</p>
+          </Hidden>
+        </Button>
+      </div>
+      <div className={classes.manager}>
+        <Button
+          color={window.innerWidth > 959 ? 'transparent' : 'white'}
+          justIcon={window.innerWidth > 959}
+          simple={!(window.innerWidth > 959)}
+          aria-owns={openNotification ? 'notification-menu-list-grow' : null}
           aria-haspopup="true"
           onClick={handleClickNotification}
           className={classes.buttonLink}
@@ -103,7 +113,7 @@ export default function AdminNavbarLinks() {
           disablePortal
           className={
             classNames({ [classes.popperClose]: !openNotification }) +
-            " " +
+            ' ' +
             classes.popperNav
           }
         >
@@ -113,7 +123,7 @@ export default function AdminNavbarLinks() {
               id="notification-menu-list-grow"
               style={{
                 transformOrigin:
-                  placement === "bottom" ? "center top" : "center bottom"
+                  placement === 'bottom' ? 'center top' : 'center bottom'
               }}
             >
               <Paper>
@@ -135,7 +145,7 @@ export default function AdminNavbarLinks() {
                       onClick={handleCloseNotification}
                       className={classes.dropdownItem}
                     >
-                      You{"'"}re now friend with Andrew
+                      You're now friend with Andrew
                     </MenuItem>
                     <MenuItem
                       onClick={handleCloseNotification}
@@ -211,4 +221,6 @@ export default function AdminNavbarLinks() {
       </div>
     </div>
   );
-}
+};
+
+export default AdminNavbarLinks;

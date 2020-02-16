@@ -11,7 +11,7 @@ import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
 // core components
-import AdminNavbarLinks from "components/Navbars/AdminNavbarLinks.js";
+import AdminNavbarLinks from "components/Navbars/AdminNavbarLinks/AdminNavbarLinks";
 import RTLNavbarLinks from "components/Navbars/RTLNavbarLinks.js";
 
 import Brand from './Brand';
