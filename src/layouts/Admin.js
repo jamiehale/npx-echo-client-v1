@@ -6,7 +6,6 @@ import { makeStyles } from "@material-ui/core/styles";
 import Navbar from "components/Navbars/Navbar.js";
 import Footer from "components/Footer/Footer.js";
 import Sidebar from "components/Sidebar/Sidebar.js";
-import FixedPlugin from "components/FixedPlugin/FixedPlugin.js";
 
 import routes from "routes.js";
 
@@ -40,26 +39,9 @@ const useStyles = makeStyles(styles);
 export default function Admin({ ...rest }) {
   const classes = useStyles();
   const mainPanel = useRef();
-  const [image, setImage] = useState(bgImage);
-  const [color, setColor] = useState("blue");
-  const [fixedClasses, setFixedClasses] = useState("dropdown show");
+  const [image] = useState(bgImage);
+  const [color] = useState("blue");
   const [mobileOpen, setMobileOpen] = useState(false);
-
-  const handleImageClick = image => {
-    setImage(image);
-  };
-
-  const handleColorClick = color => {
-    setColor(color);
-  };
-
-  const handleFixedClick = () => {
-    if (fixedClasses === "dropdown") {
-      setFixedClasses("dropdown show");
-    } else {
-      setFixedClasses("dropdown");
-    }
-  };
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
