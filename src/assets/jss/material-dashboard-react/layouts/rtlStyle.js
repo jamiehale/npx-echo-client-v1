@@ -1,5 +1,5 @@
 import {
-  drawerWidth,
+  drawerWidthCompressed,
   transition,
   container
 } from "assets/jss/material-dashboard-react.js";
@@ -13,7 +13,7 @@ const appStyle = theme => ({
   },
   mainPanel: {
     [theme.breakpoints.up("md")]: {
-      width: `calc(100% - ${drawerWidth}px)`
+      width: `calc(100% - ${drawerWidthCompressed}px)`
     },
     overflow: "auto",
     position: "relative",

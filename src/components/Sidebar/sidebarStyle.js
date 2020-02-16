@@ -1,5 +1,6 @@
 import {
   drawerWidth,
+  drawerWidthCompressed,
   transition,
   boxShadow,
   defaultFont,
@@ -24,9 +25,9 @@ const sidebarStyle = theme => ({
     left: "0",
     zIndex: "1",
     ...boxShadow,
-    width: drawerWidth,
+    width: drawerWidthCompressed,
     [theme.breakpoints.up("md")]: {
-      width: drawerWidth,
+      width: drawerWidthCompressed,
       position: "fixed",
       height: "100%"
     },
@@ -148,36 +149,37 @@ const sidebarStyle = theme => ({
   itemLink: {
     width: "auto",
     transition: "all 300ms linear",
-    margin: "0px",
+    margin: "10px 15px 0",
     position: "relative",
-    display: "flex",
-    flexDirection: 'column',
-    alignItems: 'center',
+    display: "block",
     padding: "10px 15px",
     backgroundColor: "transparent",
-    ...defaultFont
-  },
-  itemIcon: {
-    width: "24px",
-    height: "30px",
-    fontSize: "24px",
-    lineHeight: "30px",
-    float: "left",
-    textAlign: "center",
-    verticalAlign: "middle",
-    color: "rgba(" + hexToRgb(whiteColor) + ", 0.8)"
-  },
-  itemIconRTL: {
-    marginRight: "3px",
-    marginLeft: "15px",
-    float: "right"
+    ...defaultFont,
+    [theme.breakpoints.up("md")]: {
+      display: "flex",
+      flexDirection: 'column',
+      alignItems: 'center',
+      margin: "0px",
+      borderRadius: "0",
+    },
+    [theme.breakpoints.down("sm")]: {
+      margin: "10px 15px 0",
+      borderRadius: "3px",
+      display: "block",
+    },
   },
   itemText: {
     ...defaultFont,
     margin: "0",
     lineHeight: "30px",
-    fontSize: "12px",
-    color: whiteColor
+    fontSize: "14px",
+    color: whiteColor,
+    [theme.breakpoints.up('md')]: {
+      fontSize: '12px',
+    },
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '14px',
+    },
   },
   itemTextRTL: {
     textAlign: "right"
@@ -285,17 +287,9 @@ const sidebarStyle = theme => ({
     position: "relative",
     height: "calc(100vh - 75px)",
     overflow: "auto",
-    width: drawerWidth,
     zIndex: "4",
     overflowScrolling: "touch"
   },
-  activePro: {
-    [theme.breakpoints.up("md")]: {
-      position: "absolute",
-      width: "100%",
-      bottom: "13px"
-    }
-  }
 });
 
 export default sidebarStyle;

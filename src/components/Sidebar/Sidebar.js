@@ -2,7 +2,7 @@
 import React from "react";
 import classNames from "classnames";
 import PropTypes from "prop-types";
-import { NavLink } from "react-router-dom";
+import { NavLink, useRouteMatch } from "react-router-dom";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 import Drawer from "@material-ui/core/Drawer";
@@ -10,10 +10,12 @@ import Hidden from "@material-ui/core/Hidden";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
-import Icon from "@material-ui/core/Icon";
 // core components
 import AdminNavbarLinks from "components/Navbars/AdminNavbarLinks.js";
 import RTLNavbarLinks from "components/Navbars/RTLNavbarLinks.js";
+
+import Brand from './Brand';
+import RouteIcon from './RouteIcon';
 
 import styles from "./sidebarStyle.js";
 
@@ -30,74 +32,50 @@ const Sidebar = ({
   handleDrawerToggle,
 }) => {
   const classes = useStyles();
+  const { url } = useRouteMatch('/admin/:path');
   
-  const activeRoute = (routeName) => {
-    return window.location.href.indexOf(routeName) > -1 ? true : false;
-  };
+  const isActiveRoute = route => url === `${route.layout}${route.path}`;
 
-  var links = (
-    <List className={classes.list}>
-      {routes.map((prop, key) => {
-        const listItemClasses = classNames({
-          [" " + classes[color]]: activeRoute(prop.layout + prop.path)
-        });
-        const whiteFontClasses = classNames({
-          [" " + classes.whiteFont]: activeRoute(prop.layout + prop.path)
-        });
-        return (
-          <NavLink
-            to={prop.layout + prop.path}
-            className={classes.item}
-            activeClassName="active"
-            key={key}
-          >
-            <ListItem button className={classes.itemLink + listItemClasses}>
-              {typeof prop.icon === "string" ? (
-                <Icon
-                  className={classNames(classes.itemIcon, whiteFontClasses, {
-                    [classes.itemIconRTL]: rtlActive
-                  })}
-                >
-                  {prop.icon}
-                </Icon>
-              ) : (
-                <prop.icon
-                  className={classNames(classes.itemIcon, whiteFontClasses, {
-                    [classes.itemIconRTL]: rtlActive
-                  })}
-                />
-              )}
-              <ListItemText
-                primary={rtlActive ? prop.rtlName : prop.name}
-                className={classNames(classes.itemText, whiteFontClasses, {
-                  [classes.itemTextRTL]: rtlActive
-                })}
-                disableTypography={true}
-              />
-            </ListItem>
-          </NavLink>
-        );
-      })}
-    </List>
-  );
-
-  var brand = (
-    <div className={classes.logo}>
-      <a
-        href="https://www.creative-tim.com?ref=mdr-sidebar"
-        className={classNames(classes.logoLink, {
-          [classes.logoLinkRTL]: rtlActive
-        })}
-        target="_blank"
+  const links = routes.map((route, i) => (
+    <NavLink
+      to={route.layout + route.path}
+      className={classes.item}
+      activeClassName="active"
+      key={i}
+    >
+      <ListItem
+        button
+        className={
+          classNames(
+            classes.itemLink,
+            {
+              [classes[color]]: isActiveRoute(route),
+            }
+          )
+        }
       >
-        <div className={classes.logoImage}>
-          <img src={logo} alt="logo" className={classes.img} />
-        </div>
-        {logoText}
-      </a>
-    </div>
-  );
-  
+        <RouteIcon
+          route={route}
+          isActiveRoute={isActiveRoute(route)}
+          rtlActive={rtlActive}
+        />
+        <ListItemText
+          primary={rtlActive ? route.rtlName : route.name}
+          className={
+            classNames(
+              classes.itemText,
+              {
+                [classes.whiteFont]: isActiveRoute(route),
+                [classes.itemTextRTL]: rtlActive,
+              }
+            )
+          }
+          disableTypography={true}
+        />
+      </ListItem>
+    </NavLink>
+  ));
+
   return (
     <div>
       <Hidden mdUp implementation="css">
@@ -115,17 +93,23 @@ const Sidebar = ({
             keepMounted: true // Better open performance on mobile.
           }}
         >
-          {brand}
+          <Brand
+            logo={logo}
+            logoText={logoText}
+            rtlActive={rtlActive}
+          />
           <div className={classes.sidebarWrapper}>
             {rtlActive ? <RTLNavbarLinks /> : <AdminNavbarLinks />}
-            {links}
+            <List className={classes.list}>
+              {links}
+            </List>
           </div>
-          {image !== undefined ? (
+          {image && (
             <div
               className={classes.background}
               style={{ backgroundImage: "url(" + image + ")" }}
             />
-          ) : null}
+          )}
         </Drawer>
       </Hidden>
       <Hidden smDown implementation="css">
@@ -139,14 +123,22 @@ const Sidebar = ({
             })
           }}
         >
-          {brand}
-          <div className={classes.sidebarWrapper}>{links}</div>
-          {image !== undefined ? (
+          <Brand
+            logo={logo}
+            logoText={logoText}
+            rtlActive={rtlActive}
+          />
+          <div className={classes.sidebarWrapper}>
+            <List className={classes.list}>
+              {links}
+            </List>
+          </div>
+          {image && (
             <div
               className={classes.background}
               style={{ backgroundImage: "url(" + image + ")" }}
             />
-          ) : null}
+          )}
         </Drawer>
       </Hidden>
     </div>
