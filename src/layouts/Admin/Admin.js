@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useCallback } from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 import Navbar from '../../components/Navbars/Navbar';
@@ -39,7 +39,12 @@ const Admin = (props) => {
   const ref = useRef();
   usePerfectScrollbar(ref);
   const [mobileOpen, setMobileOpen] = useState(false);
-  useStupidResizeCloseSidebar(() => { setMobileOpen(false); });
+
+  const onCloseSidebar = useCallback(() => {
+    setMobileOpen(false);
+  }, [setMobileOpen]);
+  
+  useStupidResizeCloseSidebar(onCloseSidebar);
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
