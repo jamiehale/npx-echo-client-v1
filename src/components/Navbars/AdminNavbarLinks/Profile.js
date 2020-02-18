@@ -23,10 +23,6 @@ const Profile = ({
     }
   };
 
-  const handleCloseProfile = () => {
-    setAnchorEl(null);
-  };
-
   const isOpen = Boolean(achorEl);
 
   return (
@@ -45,43 +41,6 @@ const Profile = ({
           <p className={classes.linkText}>Profile</p>
         </Hidden>
       </Button>
-      <Poppers
-        open={isOpen}
-        anchorEl={achorEl}
-        transition
-        disablePortal
-        className={
-          classNames({ [classes.popperClose]: !isOpen }) +
-          " " +
-          classes.popperNav
-        }
-      >
-        {({ TransitionProps, placement }) => (
-          <Grow
-            {...TransitionProps}
-            id="profile-menu-list-grow"
-            style={{
-              transformOrigin:
-                placement === "bottom" ? "center top" : "center bottom"
-            }}
-          >
-            <Paper>
-              <ClickAwayListener onClickAway={handleCloseProfile}>
-                <Card>
-                  <CardContent>
-                  <Typography className={classes.title} color="textSecondary" gutterBottom>
-                    HALE, Jamie
-                  </Typography>
-                  <Typography variant="body2" component="p">
-                    Last login: 2020-02-14
-                  </Typography>
-                  </CardContent>
-                </Card>
-              </ClickAwayListener>
-            </Paper>
-          </Grow>
-        )}
-      </Poppers>
     </div>
   );
 };

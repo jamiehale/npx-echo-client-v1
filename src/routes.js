@@ -5,6 +5,8 @@ import BubbleChart from "@material-ui/icons/BubbleChart";
 import LocationOn from "@material-ui/icons/LocationOn";
 import Notifications from "@material-ui/icons/Notifications";
 import Language from "@material-ui/icons/Language";
+import SettingsIcon from '@material-ui/icons/Settings';
+import SearchIcon from '@material-ui/icons/Search';
 // core components/views for Admin layout
 import DashboardPage from "./views/Dashboard/Dashboard.js";
 import UserProfile from "./views/UserProfile/UserProfile.js";
@@ -18,12 +20,45 @@ import RTLPage from "./views/RTLPage/RTLPage.js";
 
 const dashboardRoutes = [
   {
+    path: '/search',
+    name: 'Search',
+    icon: SearchIcon,
+    component: DashboardPage,
+    layout: '/admin',
+    displayOnMobileOnly: true,
+  },
+  {
+    path: '/settings',
+    name: 'Settings',
+    icon: SettingsIcon,
+    component: DashboardPage,
+    layout: '/admin',
+    displayOnMobileOnly: true,
+  },
+  {
+    path: '/notifications',
+    name: 'Notifications',
+    icon: Notifications,
+    component: DashboardPage,
+    layout: '/admin',
+    displayOnMobileOnly: true,
+  },
+  {
+    path: '/profile',
+    name: 'Profile',
+    icon: Person,
+    component: DashboardPage,
+    layout: '/admin',
+    displayOnMobileOnly: true,
+  },
+  {
     path: "/dashboard",
     name: "ECHO",
     rtlName: "لوحة القيادة",
     icon: Dashboard,
     component: DashboardPage,
-    layout: "/admin"
+    layout: "/admin",
+    displayOnMobileOnly: false,
   },
   {
     path: "/user",
@@ -31,7 +66,8 @@ const dashboardRoutes = [
     rtlName: "ملف تعريفي للمستخدم",
     icon: Person,
     component: UserProfile,
-    layout: "/admin"
+    layout: "/admin",
+    displayOnMobileOnly: false,
   },
   {
     path: "/table",
@@ -39,7 +75,8 @@ const dashboardRoutes = [
     rtlName: "قائمة الجدول",
     icon: "content_paste",
     component: TableList,
-    layout: "/admin"
+    layout: "/admin",
+    displayOnMobileOnly: false,
   },
   {
     path: "/typography",
@@ -47,7 +84,8 @@ const dashboardRoutes = [
     rtlName: "طباعة",
     icon: LibraryBooks,
     component: Typography,
-    layout: "/admin"
+    layout: "/admin",
+    displayOnMobileOnly: false,
   },
   {
     path: "/icons",
@@ -55,7 +93,8 @@ const dashboardRoutes = [
     rtlName: "الرموز",
     icon: BubbleChart,
     component: Icons,
-    layout: "/admin"
+    layout: "/admin",
+    displayOnMobileOnly: false,
   },
   {
     path: "/maps",
@@ -63,7 +102,8 @@ const dashboardRoutes = [
     rtlName: "خرائط",
     icon: LocationOn,
     component: Maps,
-    layout: "/admin"
+    layout: "/admin",
+    displayOnMobileOnly: false,
   },
   {
     path: "/notifications",
@@ -71,7 +111,8 @@ const dashboardRoutes = [
     rtlName: "إخطارات",
     icon: Notifications,
     component: NotificationsPage,
-    layout: "/admin"
+    layout: "/admin",
+    displayOnMobileOnly: false,
   },
   {
     path: "/rtl-page",
@@ -79,7 +120,8 @@ const dashboardRoutes = [
     rtlName: "پشتیبانی از راست به چپ",
     icon: Language,
     component: RTLPage,
-    layout: "/rtl"
+    layout: "/rtl",
+    displayOnMobileOnly: false,
   },
 ];
 

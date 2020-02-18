@@ -10,16 +10,10 @@ const routeIconStyle = theme => ({
     fontSize: "24px",
     lineHeight: "30px",
     float: "left",
-    marginRight: '15px',
+    marginRight: '0',
     textAlign: "center",
     verticalAlign: "middle",
     color: "rgba(" + hexToRgb(blackColor) + ", 0.8)",
-    [theme.breakpoints.up('md')]: {
-      marginRight: '0',
-    },
-    [theme.breakpoints.down('sm')]: {
-      marginRight: '15px',
-    },
   },
   itemIconRTL: {
     marginRight: "3px",

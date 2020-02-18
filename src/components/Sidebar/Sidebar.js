@@ -39,7 +39,14 @@ const Sidebar = ({
   const links = routes.map((route, i) => (
     <NavLink
       to={route.layout + route.path}
-      className={classes.item}
+      className={
+        classNames(
+          classes.item,
+          {
+            [classes.displayOnMobileOnly]: route.displayOnMobileOnly,
+          },
+        )
+      }
       activeClassName="active"
       key={i}
     >
@@ -99,7 +106,6 @@ const Sidebar = ({
             rtlActive={rtlActive}
           />
           <div className={classes.sidebarWrapper}>
-            {rtlActive ? <RTLNavbarLinks /> : <AdminNavbarLinks />}
             <List className={classes.list}>
               {links}
             </List>

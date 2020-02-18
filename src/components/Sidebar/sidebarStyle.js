@@ -1,6 +1,5 @@
 import {
   drawerWidth,
-  drawerWidthCompressed,
   transition,
   boxShadow,
   defaultFont,
@@ -26,9 +25,9 @@ const sidebarStyle = theme => ({
     left: "0",
     zIndex: "1",
     ...boxShadow,
-    width: drawerWidthCompressed,
+    width: drawerWidth,
     [theme.breakpoints.up("md")]: {
-      width: drawerWidthCompressed,
+      width: drawerWidth,
       position: "fixed",
       height: "100%"
     },
@@ -147,27 +146,25 @@ const sidebarStyle = theme => ({
       color: whiteColor
     }
   },
+  displayOnMobileOnly: {
+    [theme.breakpoints.down('sm')]: {
+    },
+    [theme.breakpoints.up("md")]: {
+      display: 'none',
+    },
+  },
   itemLink: {
     width: "auto",
     transition: "all 300ms linear",
-    margin: "10px 15px 0",
     position: "relative",
-    display: "block",
+    display: "flex",
+    flexDirection: 'column',
+    alignItems: 'center',
+    margin: "0px",
     padding: "10px 15px",
+    borderRadius: "0",
     backgroundColor: "transparent",
     ...defaultFont,
-    [theme.breakpoints.up("md")]: {
-      display: "flex",
-      flexDirection: 'column',
-      alignItems: 'center',
-      margin: "0px",
-      borderRadius: "0",
-    },
-    [theme.breakpoints.down("sm")]: {
-      margin: "10px 15px 0",
-      borderRadius: "3px",
-      display: "block",
-    },
   },
   itemText: {
     ...defaultFont,

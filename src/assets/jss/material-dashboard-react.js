@@ -51,8 +51,7 @@ const hexToRgb = input => {
 // // // Variables - Styles that are used on more than one component
 // #############################
 
-const drawerWidth = 260;
-const drawerWidthCompressed = 80;
+const drawerWidth = 80;
 
 const transition = {
   transition: "all 0.33s cubic-bezier(0.685, 0.0473, 0.346, 1)"
@@ -267,7 +266,6 @@ export {
   hexToRgb,
   //variables
   drawerWidth,
-  drawerWidthCompressed,
   transition,
   container,
   boxShadow,
