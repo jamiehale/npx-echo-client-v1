@@ -1,13 +1,6 @@
 import React, { useState } from 'react';
-import classNames from 'classnames';
-import Grow from '@material-ui/core/Grow';
-import Paper from '@material-ui/core/Paper';
-import ClickAwayListener from '@material-ui/core/ClickAwayListener';
 import Hidden from '@material-ui/core/Hidden';
-import Poppers from '@material-ui/core/Popper';
-import Typography from '@material-ui/core/Typography';
 import Person from '@material-ui/icons/Person';
-import { Card, CardContent } from '@material-ui/core';
 import Button from '../../CustomButtons/Button';
 
 const Profile = ({

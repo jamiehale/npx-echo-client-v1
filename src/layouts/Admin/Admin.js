@@ -2,7 +2,6 @@ import React, { useState, useRef, useCallback } from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 import Navbar from '../../components/Navbars/Navbar';
-import Footer from '../../components/Footer/Footer';
 import Sidebar from '../../components/Sidebar/Sidebar';
 import usePerfectScrollbar from '../../hooks/perfect-scrollbar';
 import useStupidResizeCloseSidebar from '../../hooks/stupid-resize-close-sidebar';
@@ -11,7 +10,6 @@ import routes from '../../routes';
 
 import styles from './adminStyle.js';
 
-import bgImage from '../../assets/img/sidebar-2.jpg';
 import logo from '../../assets/img/reactlogo.png';
 
 const switchRoutes = (
