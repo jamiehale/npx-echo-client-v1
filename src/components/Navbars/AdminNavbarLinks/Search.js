@@ -1,8 +1,8 @@
 import React from 'react';
 import classNames from 'classnames';
 import SearchIcon from '@material-ui/icons/Search';
-import CustomInput from 'components/CustomInput/CustomInput';
-import Button from 'components/CustomButtons/Button';
+import CustomInput from '../../CustomInput/CustomInput';
+import Button from '../../CustomButtons/Button';
 
 const Search = ({
   classes,

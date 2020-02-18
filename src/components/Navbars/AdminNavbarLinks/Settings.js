@@ -1,7 +1,7 @@
 import React from 'react';
 import SettingsIcon from '@material-ui/icons/Settings';
 import Hidden from '@material-ui/core/Hidden';
-import Button from 'components/CustomButtons/Button';
+import Button from '../../CustomButtons/Button';
 
 const Settings = ({
   classes,

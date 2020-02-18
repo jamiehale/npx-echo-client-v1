@@ -8,7 +8,7 @@ import Poppers from '@material-ui/core/Popper';
 import Typography from '@material-ui/core/Typography';
 import Person from '@material-ui/icons/Person';
 import { Card, CardContent } from '@material-ui/core';
-import Button from 'components/CustomButtons/Button';
+import Button from '../../CustomButtons/Button';
 
 const Profile = ({
   classes,

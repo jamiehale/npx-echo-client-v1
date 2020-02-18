@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import classNames from 'classnames';
 import NotificationsIcon from '@material-ui/icons/Notifications';
-import Button from 'components/CustomButtons/Button';
 import Hidden from '@material-ui/core/Hidden';
 import Poppers from '@material-ui/core/Popper';
 import Grow from '@material-ui/core/Grow';
@@ -9,6 +8,7 @@ import Paper from '@material-ui/core/Paper';
 import MenuItem from '@material-ui/core/MenuItem';
 import MenuList from '@material-ui/core/MenuList';
 import ClickAwayListener from '@material-ui/core/ClickAwayListener';
+import Button from '../../CustomButtons/Button';
 
 const Notifications = ({
   classes,
