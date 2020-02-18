@@ -1,5 +1,5 @@
 import {
-  whiteColor,
+  blackColor,
   hexToRgb
 } from "../../assets/jss/material-dashboard-react.js";
 
@@ -13,7 +13,7 @@ const routeIconStyle = theme => ({
     marginRight: '15px',
     textAlign: "center",
     verticalAlign: "middle",
-    color: "rgba(" + hexToRgb(whiteColor) + ", 0.8)",
+    color: "rgba(" + hexToRgb(blackColor) + ", 0.8)",
     [theme.breakpoints.up('md')]: {
       marginRight: '0',
     },

@@ -1,6 +1,6 @@
 import {
   defaultFont,
-  whiteColor,
+  blackColor,
   grayColor,
   hexToRgb
 } from "../../assets/jss/material-dashboard-react.js";
@@ -33,7 +33,7 @@ const brandStyle = () => ({
     textDecoration: "none",
     backgroundColor: "transparent",
     "&,&:hover": {
-      color: whiteColor
+      color: blackColor
     }
   },
   logoLinkRTL: {

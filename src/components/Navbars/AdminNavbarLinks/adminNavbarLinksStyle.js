@@ -1,7 +1,8 @@
 import {
   defaultFont,
   dangerColor,
-  whiteColor
+  whiteColor,
+  blackColor,
 } from "../../../assets/jss/material-dashboard-react.js";
 
 import dropdownStyle from "../../../assets/jss/dropdownStyle";
@@ -29,7 +30,8 @@ const headerLinksStyle = theme => ({
     zIndex: "4",
     ...defaultFont,
     fontSize: "14px",
-    margin: "0px"
+    margin: "0px",
+    color: blackColor,
   },
   buttonLink: {
     [theme.breakpoints.down("sm")]: {
@@ -92,7 +94,8 @@ const headerLinksStyle = theme => ({
     [theme.breakpoints.down("sm")]: {
       ...defaultFont,
       fontSize: "14px",
-      marginRight: "8px"
+      marginRight: "8px",
+      color: blackColor,
     }
   },
   manager: {
@@ -102,11 +105,13 @@ const headerLinksStyle = theme => ({
     display: "inline-block"
   },
   searchWrapper: {
+    display: "inline-block",
     [theme.breakpoints.down("sm")]: {
-      width: "-webkit-fill-available",
-      margin: "10px 15px 0"
+      display: "none",
     },
-    display: "inline-block"
+  },
+  icons: {
+    color: blackColor,
   }
 });
 

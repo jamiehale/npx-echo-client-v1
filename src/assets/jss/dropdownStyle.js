@@ -67,7 +67,7 @@ const dropdownStyle = theme => ({
         padding: "0px !important",
         backgroundColor: "transparent !important",
         "& ul li": {
-          color: whiteColor + " !important",
+          color: whiteColor,
           margin: "10px 15px 0!important",
           padding: "10px 15px !important",
           "&:hover": {
@@ -109,10 +109,10 @@ const dropdownStyle = theme => ({
     clear: "both",
     fontWeight: "400",
     lineHeight: "1.42857143",
-    color: grayColor[8],
     whiteSpace: "nowrap",
     height: "unset",
     minHeight: "unset",
+    color: blackColor + ' !important',
     "&:hover": {
       backgroundColor: primaryColor[0],
       color: whiteColor,

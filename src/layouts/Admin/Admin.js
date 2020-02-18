@@ -56,7 +56,6 @@ const Admin = (props) => {
         routes={routes}
         logoText="ECHO"
         logo={logo}
-        image={bgImage}
         handleDrawerToggle={handleDrawerToggle}
         open={mobileOpen}
         color="blue"

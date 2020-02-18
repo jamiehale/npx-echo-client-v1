@@ -18,6 +18,7 @@ import {
 
 const sidebarStyle = theme => ({
   drawerPaper: {
+    backgroundColor: whiteColor,
     border: "none",
     position: "fixed",
     top: "0",
@@ -173,7 +174,7 @@ const sidebarStyle = theme => ({
     margin: "0",
     lineHeight: "30px",
     fontSize: "14px",
-    color: whiteColor,
+    color: blackColor,
     [theme.breakpoints.up('md')]: {
       fontSize: '12px',
     },
