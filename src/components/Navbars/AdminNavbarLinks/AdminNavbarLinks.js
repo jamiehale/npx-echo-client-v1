@@ -5,7 +5,7 @@ import Settings from './Settings';
 import Notifications from './Notifications';
 import Profile from './Profile';
 
-import styles from './headerLinksStyle';
+import styles from './adminNavbarLinksStyle';
 
 const useStyles = makeStyles(styles);
 

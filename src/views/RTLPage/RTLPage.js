@@ -39,7 +39,7 @@ import {
   completedTasksChart
 } from "../../variables/charts.js";
 
-import styles from "../../assets/jss/material-dashboard-react/views/rtlStyle.js";
+import styles from "./rtlStyle";
 
 import avatar from "../../assets/img/faces/marc.jpg";
 

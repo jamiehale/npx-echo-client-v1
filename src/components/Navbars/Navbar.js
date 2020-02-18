@@ -14,7 +14,7 @@ import AdminNavbarLinks from "./AdminNavbarLinks/AdminNavbarLinks";
 import RTLNavbarLinks from "./RTLNavbarLinks.js";
 import Button from "../CustomButtons/Button.js";
 
-import styles from "../../assets/jss/material-dashboard-react/components/headerStyle.js";
+import styles from "./navbarStyle";
 
 const useStyles = makeStyles(styles);
 
