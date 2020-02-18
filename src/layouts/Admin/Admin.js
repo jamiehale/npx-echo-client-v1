@@ -69,7 +69,6 @@ const Admin = (props) => {
           {...props}
         />
         <div className={classes.map}>{switchRoutes}</div>
-        <Footer />
       </div>
     </div>
   );
