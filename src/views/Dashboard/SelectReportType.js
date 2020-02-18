@@ -1,5 +1,5 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Switch, Route, Link } from 'react-router-dom';
 import AddIcon from '@material-ui/icons/Add';
 import SearchIcon from '@material-ui/icons/Search';
 import TrendingUpIcon from '@material-ui/icons/TrendingUp';
@@ -10,7 +10,7 @@ import Card from "../../components/Card/Card.js";
 import CardHeader from "../../components/Card/CardHeader.js";
 import CardIcon from "../../components/Card/CardIcon.js";
 
-const Menu = ({
+const SelectReportType = ({
   classes,
 }) => (
   <div>
@@ -32,7 +32,7 @@ const Menu = ({
           <Card>
             <CardHeader color="info" stats icon>
               <CardIcon color="info">
-                <SearchIcon />
+                <AddIcon />
               </CardIcon>
               <h3 className={classes.cardTitle}>Component Health Report</h3>
             </CardHeader>
@@ -44,7 +44,7 @@ const Menu = ({
           <Card>
             <CardHeader color="info" stats icon>
               <CardIcon color="info">
-                <TrendingUpIcon />
+                <AddIcon />
               </CardIcon>
               <h3 className={classes.cardTitle}>Plant Health Report</h3>
             </CardHeader>
@@ -55,4 +55,16 @@ const Menu = ({
   </div>
 );
 
-export default Menu;
+const NewReportFlow = ({
+  classes,
+}) => {
+  return (
+    <Switch>
+      <Route exact path="/admin/dashboard/reports/new">
+        <SelectReportType classes={classes} />
+      </Route>
+    </Switch>
+  );
+};
+
+export default NewReportFlow;
