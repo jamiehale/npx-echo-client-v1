@@ -12,23 +12,18 @@ import styles from './adminStyle.js';
 
 import logo from '../../assets/img/reactlogo.png';
 
-const switchRoutes = (
-  <Switch>
-    {routes.map((route, i) => {
-      if (route.layout === '/admin') {
-        return (
-          <Route
-            path={route.layout + route.path}
-            component={route.component}
-            key={route.layout + route.path}
-          />
-        );
-      }
-      return null;
-    })}
-    <Redirect from="/admin" to="/admin/dashboard" />
-  </Switch>
-);
+const switchRoutes = routes.map((route, i) => {
+  if (route.layout === '/admin') {
+    return (
+      <Route
+        path={route.layout + route.path}
+        component={route.component}
+        key={route.layout + route.path}
+      />
+    );
+  }
+  return null;
+});
 
 const useStyles = makeStyles(styles);
 
@@ -65,7 +60,12 @@ const Admin = (props) => {
           handleDrawerToggle={handleDrawerToggle}
           {...props}
         />
-        <div className={classes.map}>{switchRoutes}</div>
+        <div className={classes.map}>
+          <Switch>
+            {switchRoutes}
+            <Redirect from="/admin" to="/admin/dashboard" />
+          </Switch>
+        </div>
       </div>
     </div>
   );
