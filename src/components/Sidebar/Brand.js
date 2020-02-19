@@ -14,24 +14,10 @@ const Brand = ({
 
   return (
     <div className={classes.logo}>
-      <a
-        href="https://www.creative-tim.com?ref=mdr-sidebar"
-        className={
-          classNames(
-            classes.logoLink,
-            {
-              [classes.logoLinkRTL]: rtlActive
-            }
-          )
-        }
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <div className={classes.logoImage}>
-          <img src={logo} alt="logo" className={classes.img} />
-        </div>
-        {logoText}
-      </a>
+      <div className={classes.logoImage}>
+        <img src={logo} alt="logo" className={classes.img} />
+      </div>
+      <p>{logoText}</p>
     </div>
   );
 };

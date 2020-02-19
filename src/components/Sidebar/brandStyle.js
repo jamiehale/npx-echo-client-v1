@@ -10,6 +10,9 @@ const brandStyle = () => ({
     position: "relative",
     padding: "15px 15px",
     zIndex: "4",
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
     "&:after": {
       content: '""',
       position: "absolute",
@@ -19,6 +22,10 @@ const brandStyle = () => ({
       right: "15px",
       width: "calc(100% - 30px)",
       backgroundColor: "rgba(" + hexToRgb(grayColor[6]) + ", 0.3)"
+    },
+    '& p': {
+      padding: 0,
+      margin: 0,
     }
   },
   logoLink: {
@@ -43,13 +50,12 @@ const brandStyle = () => ({
     width: "30px",
     display: "inline-block",
     maxHeight: "30px",
-    marginLeft: "10px",
-    marginRight: "15px"
+    marginLeft: "auto",
+    marginRight: "auto"
   },
   img: {
     width: "35px",
     top: "22px",
-    position: "absolute",
     verticalAlign: "middle",
     border: "0"
   },
