@@ -2,7 +2,6 @@ import Dashboard from "@material-ui/icons/Dashboard";
 import Person from "@material-ui/icons/Person";
 import LocationOn from "@material-ui/icons/LocationOn";
 import Notifications from "@material-ui/icons/Notifications";
-import Language from "@material-ui/icons/Language";
 import SettingsIcon from '@material-ui/icons/Settings';
 import SearchIcon from '@material-ui/icons/Search';
 import AddIcon from '@material-ui/icons/Add';
@@ -10,7 +9,7 @@ import TrendingUpIcon from '@material-ui/icons/TrendingUp';
 import CreateIcon from '@material-ui/icons/Create';
 // core components/views for Admin layout
 import DashboardPage from "./views/Dashboard/Dashboard.js";
-import UserProfile from "./views/UserProfile/UserProfile.js";
+import ReportsPage from "./views/Reports/Reports";
 import TableList from "./views/TableList/TableList.js";
 import Typography from "./views/Typography/Typography.js";
 import Icons from "./views/Icons/Icons.js";
@@ -62,7 +61,7 @@ const dashboardRoutes = [
     path: "/reports/new",
     name: "Add New Report",
     icon: AddIcon,
-    component: UserProfile,
+    component: ReportsPage,
     layout: "/admin",
     displayOnMobileOnly: false,
   },
@@ -70,7 +69,7 @@ const dashboardRoutes = [
     path: "/reports",
     name: "Generate Report",
     icon: SearchIcon,
-    component: TableList,
+    component: ReportsPage,
     layout: "/admin",
     displayOnMobileOnly: false,
   },
@@ -78,7 +77,7 @@ const dashboardRoutes = [
     path: "/reports/live",
     name: "Live Health Report",
     icon: TrendingUpIcon,
-    component: Typography,
+    component: ReportsPage,
     layout: "/admin",
     displayOnMobileOnly: false,
   },
@@ -86,7 +85,7 @@ const dashboardRoutes = [
     path: "/reports/improvement-actions",
     name: "SHIP/CHIP",
     icon: CreateIcon,
-    component: Icons,
+    component: ReportsPage,
     layout: "/admin",
     displayOnMobileOnly: false,
   },
