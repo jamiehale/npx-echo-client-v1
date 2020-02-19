@@ -7,7 +7,7 @@ import styles from './tableStyle';
 
 const useStyles = makeStyles(styles);
 
-export const SectionHeader = ({
+export const SectionHeaderRow = ({
   title,
 }) => {
   const classes = useStyles();
@@ -19,4 +19,4 @@ export const SectionHeader = ({
   );
 };
 
-export default SectionHeader;
+export default SectionHeaderRow;

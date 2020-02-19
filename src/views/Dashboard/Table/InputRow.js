@@ -1,26 +1,14 @@
 import React from 'react';
-import classNames from 'classnames';
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
-import TableRow from '@material-ui/core/TableRow';
-import TableCell from '@material-ui/core/TableCell';
+import BodyRow from './BodyRow';
+import Cell from './Cell';
+import InputCell from './InputCell';
+import BodyRowTitleCell from './BodyRowTitleCell';
 
 import styles from './tableStyle';
 
 const useStyles = makeStyles(styles);
-
-const classFromValue = (value) => {
-  if (value < 2) {
-    return 'tableCellGreen';
-  }
-  if (value === 2) {
-    return 'tableCellWhite';
-  }
-  if (value === 3) {
-    return 'tableCellYellow';
-  }
-  return 'tableCellRed';
-};
 
 const InputRow = ({
   title,
@@ -29,15 +17,15 @@ const InputRow = ({
   const classes = useStyles();
 
   return (
-    <TableRow className={classes.tableBodyRow}>
-      <TableCell className={classes.tableCell}>{title}</TableCell>
+    <BodyRow>
+      <BodyRowTitleCell title={title} />
       {values.map((value, i) => (
-        <TableCell className={classNames(classes.tableCell, classes[classFromValue(value)])}>{value}</TableCell>
+        <InputCell value={value} />
       ))}
-      <TableCell className={classes.tableCell}>
+      <Cell>
         <Button>View</Button>
-      </TableCell>
-    </TableRow>
+      </Cell>
+    </BodyRow>
   );
 };
 
