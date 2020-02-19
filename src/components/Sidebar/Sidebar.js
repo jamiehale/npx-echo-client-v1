@@ -27,7 +27,7 @@ const Sidebar = ({
   handleDrawerToggle,
 }) => {
   const classes = useStyles();
-  const { url } = useRouteMatch('/admin/:path');
+  const { url } = useRouteMatch('/admin/*');
   
   const isActiveRoute = route => url === `${route.layout}${route.path}`;
 

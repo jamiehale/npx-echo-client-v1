@@ -1,7 +1,7 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Switch, Route } from 'react-router-dom';
-import Menu from './Menu';
+import ReportArchive from './ReportArchive';
 import SelectReportType from './SelectReportType';
 import SystemHealthReportFlow from './SystemHealthReportFlow';
 
@@ -15,7 +15,7 @@ export default function Reports() {
   return (
     <Switch>
       <Route exact path="/admin/reports">
-        <Menu classes={classes} />
+        <ReportArchive classes={classes} />
       </Route>
       <Route exact path="/admin/reports/new">
         <SelectReportType classes={classes} />

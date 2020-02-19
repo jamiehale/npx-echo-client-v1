@@ -20,12 +20,12 @@ const SystemHealthReportFlow = () => {
 
   const handleSubmitGeneralInfo = (report) => {
     setReport(report);
-    history.push('/admin/dashboard/reports/new/system-health-report/health-indicators')
+    history.push('/admin/reports/new/system-health-report/health-indicators')
   };
 
   const handleSubmitHealthIndicators = (report) => {
     setReport(report);
-    history.push('/admin/dashboard/reports');
+    history.push('/admin/reports');
   };
 
   const handleCancel = () => {
@@ -34,14 +34,14 @@ const SystemHealthReportFlow = () => {
 
   return (
     <Switch>
-      <Route exact path="/admin/dashboard/reports/new/system-health-report">
+      <Route exact path="/admin/reports/new/system-health-report">
         <GeneralInfoPage
           report={report}
           onSubmit={handleSubmitGeneralInfo}
           onCancel={handleCancel}
         />
       </Route>
-      <Route path="/admin/dashboard/reports/new/system-health-report/health-indicators">
+      <Route path="/admin/reports/new/system-health-report/health-indicators">
         <HealthIndicatorsPage
           report={report}
           onSubmit={handleSubmitHealthIndicators}

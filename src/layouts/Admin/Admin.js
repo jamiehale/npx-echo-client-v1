@@ -5,19 +5,12 @@ import Navbar from '../../components/Navbars/Navbar';
 import Sidebar from '../../components/Sidebar/Sidebar';
 import usePerfectScrollbar from '../../hooks/perfect-scrollbar';
 import useStupidResizeCloseSidebar from '../../hooks/stupid-resize-close-sidebar';
+import DashboardPage from '../../views/Dashboard/Dashboard';
+import ReportsPage from '../../views/Reports/Reports';
 
 import routes from '../../routes';
 
 import styles from './adminStyle.js';
-
-const switchRoutes = routes.filter(route => route.layout === '/admin')
-  .map((route, i) => (
-    <Route
-      path={route.layout + route.path}
-      component={route.component}
-      key={route.layout + route.path}
-    />
-  ));
 
 const useStyles = makeStyles(styles);
 
@@ -54,7 +47,12 @@ const Admin = (props) => {
         />
         <div className={classes.map}>
           <Switch>
-            {switchRoutes}
+            <Route path="/admin/dashboard">
+              <DashboardPage />
+            </Route>
+            <Route path="/admin/reports">
+              <ReportsPage />
+            </Route>
             <Redirect from="/admin" to="/admin/dashboard" />
           </Switch>
         </div>
