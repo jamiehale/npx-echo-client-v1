@@ -76,6 +76,24 @@ const dashboardStyle = {
       fontWeight: "400",
       lineHeight: "1"
     }
+  },
+  systemHealthPie: {
+    "& svg": {
+      display: 'block',
+      margin: 'auto',
+    },
+    "& g.ct-series-a > path": {
+      fill: '#70ad47',
+    },
+    "& g.ct-series-b > path": {
+      fill: '#ffffff',
+    },
+    "& g.ct-series-c > path": {
+      fill: '#ffc000',
+    },
+    "& g.ct-series-d > path": {
+      fill: '#e74c3c',
+    },
   }
 };
 

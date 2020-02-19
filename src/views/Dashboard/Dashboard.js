@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import WarningIcon from '@material-ui/icons/Warning';
+import ChartistGraph from "react-chartist";
 import GridItem from "../../components/Grid/GridItem.js";
 import GridContainer from "../../components/Grid/GridContainer.js";
 import ActionsTable from './ActionsTable';
@@ -8,8 +9,13 @@ import ActionsTable from './ActionsTable';
 import styles from "./dashboardStyle";
 import Card from "../../components/Card/Card";
 import CardHeader from "../../components/Card/CardHeader";
+import CardBody from '../../components/Card/CardBody';
 import CardIcon from "../../components/Card/CardIcon";
 import CardFooter from "../../components/Card/CardFooter";
+
+import {
+  dailySalesChart,
+} from "../../variables/charts.js";
 
 const useStyles = makeStyles(styles);
 
@@ -49,6 +55,7 @@ const ReportsCompletedIcon = () => (
 );
 
 const Dashboard = () => {
+  const classes = useStyles();
   const [isActionsExpanded, setActionsExpanded] = useState(false);
 
   const handleToggleActionsExpanded = () => {
@@ -98,6 +105,40 @@ const Dashboard = () => {
               value={5}
               lastUpdated="yesterday"
             />
+          </GridItem>
+          <GridItem xs={12} sm={12} md={6}>
+            <Card chart>
+              <CardHeader color="primary" className={classes.systemHealthPie}>
+                <ChartistGraph
+                  className="ct-chart"
+                  data={{
+                    series: [
+                      {
+                        value: 5,
+                      },
+                      {
+                        value: 10,
+                      },
+                      {
+                        value: 12,
+                      },
+                      {
+                        value: 3,
+                      }
+                    ]
+                  }}
+                  type="Pie"
+                  options={{
+                    width: '200px',
+                    height: '200px',
+                  }}
+                  listener={dailySalesChart.animation}
+                />
+              </CardHeader>
+              <CardBody>
+                <h4 className={classes.cardTitle}>Total System Health Breakdown</h4>
+              </CardBody>
+            </Card>
           </GridItem>
         </>
       )}
