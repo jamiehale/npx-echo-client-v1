@@ -1,12 +1,12 @@
 import React from 'react';
+import { makeStyles } from "@material-ui/core/styles";
+import Button from '@material-ui/core/Button';
 import GridContainer from '../../components/Grid/GridContainer';
 import GridItem from '../../components/Grid/GridItem';
-import Table from '../../components/Table/Table';
 import Card from "../../components/Card/Card.js";
 import CardHeader from "../../components/Card/CardHeader.js";
 import CardBody from "../../components/Card/CardBody.js";
-import { makeStyles } from "@material-ui/core/styles";
-import Button from '@material-ui/core/Button';
+import Table, { SectionHeader, InputRow } from './Table';
 
 const indicators = [
   'Number of Functional Failures',
@@ -80,13 +80,32 @@ const HealthIndicatorsPage = ({
                 <h4 className={classes.cardTitleWhite}>Station Summary</h4>
               </CardHeader>
               <CardBody>
-                <Table
-                  tableHeaderColor="primary"
-                  tableHead={["Performance Indicator", "Unit 0", "Unit 1", "Unit 2", "Unit 3", "Unit 4", "Details"]}
-                  tableData={indicators.map(indicator => ([
-                    indicator, '2', '1', '4', '0', '3', 'Nope'
-                  ]))}
-                />
+                <Table units={[0,1,2,3,4]}>
+                  <SectionHeader title="Functional Failures" />
+                  <InputRow title="Number of Functional Failures" values={[2, 1, 4, 0, 3]} />
+                  <InputRow title="Outstanding Functional Failure Corrective Actions" values={[2, 1, 4, 0, 3]} />
+
+                  <SectionHeader title="Maintenance Backlog" />
+                  <InputRow title="ODMB (On-Line Deficient Maintenance Backlog)" values={[2, 1, 4, 0, 3]} />
+                  <InputRow title="SDMB (Shutdown Deficient Maintenance Backlog)" values={[2, 1, 4, 0, 3]} />
+                  <InputRow title="OCMB (on-line corrective maintenance backlog)" values={[2, 1, 4, 0, 3]} />
+                  <InputRow title="SCMB (shutdown corrective maintenance backlog)" values={[2, 1, 4, 0, 3]} />
+                  <InputRow title="Predefines - total of late and deferred" values={[2, 1, 4, 0, 3]} />
+
+                  <SectionHeader title="Operational Challenges" />
+                  <InputRow title="Number of Technical Operability Evaluations (TOEs)" values={[2, 1, 4, 0, 3]} />
+                  <InputRow title="Regdoc 3.1.1 Reportable Events	" values={[2, 1, 4, 0, 3]} />
+
+                  <SectionHeader title="Engineering" />
+                  <InputRow title="Operator Workarounds" values={[2, 1, 4, 0, 3]} />
+                  <InputRow title="Operator Burdens" values={[2, 1, 4, 0, 3]} />
+                  <InputRow title="TMODs > 6 months" values={[2, 1, 4, 0, 3]} />
+                  <InputRow title="Temporary Configuration Change Backlog > 90 days" values={[2, 1, 4, 0, 3]} />
+                  <InputRow title="Modification Backlog" values={[2, 1, 4, 0, 3]} />
+
+                  <SectionHeader title="Total Health" />
+                  <InputRow title="Total System Health" values={[2, 1, 4, 0, 3]} />
+                </Table>
               </CardBody>
             </Card>
           </GridItem>
