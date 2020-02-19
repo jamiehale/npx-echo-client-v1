@@ -43,9 +43,6 @@ const brandStyle = () => ({
       color: blackColor
     }
   },
-  logoLinkRTL: {
-    textAlign: "right"
-  },
   logoImage: {
     width: "30px",
     display: "inline-block",

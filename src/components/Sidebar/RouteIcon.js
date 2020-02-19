@@ -9,7 +9,6 @@ const useStyles = makeStyles(styles);
 const RouteIcon = ({
   route,
   isActiveRoute,
-  rtlActive,
 }) => {
   const classes = useStyles();
 
@@ -19,17 +18,13 @@ const RouteIcon = ({
 
   return (typeof route.icon === "string") ? (
     <Icon
-      className={classNames(classes.itemIcon, whiteFontClasses, {
-        [classes.itemIconRTL]: rtlActive
-      })}
+      className={classNames(classes.itemIcon, whiteFontClasses)}
     >
       {route.icon}
     </Icon>
   ) : (
     <route.icon
-      className={classNames(classes.itemIcon, whiteFontClasses, {
-        [classes.itemIconRTL]: rtlActive
-      })}
+      className={classNames(classes.itemIcon, whiteFontClasses)}
     />
   );
 };

@@ -15,11 +15,6 @@ const routeIconStyle = theme => ({
     verticalAlign: "middle",
     color: "rgba(" + hexToRgb(blackColor) + ", 0.8)",
   },
-  itemIconRTL: {
-    marginRight: "3px",
-    marginLeft: "15px",
-    float: "right"
-  },
 });
 
 export default routeIconStyle;

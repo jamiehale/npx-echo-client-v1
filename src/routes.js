@@ -16,8 +16,6 @@ import Typography from "./views/Typography/Typography.js";
 import Icons from "./views/Icons/Icons.js";
 import Maps from "./views/Maps/Maps.js";
 import NotificationsPage from "./views/Notifications/Notifications.js";
-// core components/views for RTL layout
-import RTLPage from "./views/RTLPage/RTLPage.js";
 
 const dashboardRoutes = [
   {
@@ -55,7 +53,6 @@ const dashboardRoutes = [
   {
     path: "/dashboard",
     name: "Dashboard",
-    rtlName: "لوحة القيادة",
     icon: Dashboard,
     component: DashboardPage,
     layout: "/admin",
@@ -64,7 +61,6 @@ const dashboardRoutes = [
   {
     path: "/reports/new",
     name: "Add New Report",
-    rtlName: "ملف تعريفي للمستخدم",
     icon: AddIcon,
     component: UserProfile,
     layout: "/admin",
@@ -73,7 +69,6 @@ const dashboardRoutes = [
   {
     path: "/reports",
     name: "Generate Report",
-    rtlName: "قائمة الجدول",
     icon: SearchIcon,
     component: TableList,
     layout: "/admin",
@@ -82,7 +77,6 @@ const dashboardRoutes = [
   {
     path: "/reports/live",
     name: "Live Health Report",
-    rtlName: "طباعة",
     icon: TrendingUpIcon,
     component: Typography,
     layout: "/admin",
@@ -91,7 +85,6 @@ const dashboardRoutes = [
   {
     path: "/reports/improvement-actions",
     name: "SHIP/CHIP",
-    rtlName: "الرموز",
     icon: CreateIcon,
     component: Icons,
     layout: "/admin",
@@ -100,7 +93,6 @@ const dashboardRoutes = [
   {
     path: "/maps",
     name: "6",
-    rtlName: "خرائط",
     icon: LocationOn,
     component: Maps,
     layout: "/admin",
@@ -109,19 +101,9 @@ const dashboardRoutes = [
   {
     path: "/notifications",
     name: "7",
-    rtlName: "إخطارات",
     icon: Notifications,
     component: NotificationsPage,
     layout: "/admin",
-    displayOnMobileOnly: false,
-  },
-  {
-    path: "/rtl-page",
-    name: "8",
-    rtlName: "پشتیبانی از راست به چپ",
-    icon: Language,
-    component: RTLPage,
-    layout: "/rtl",
     displayOnMobileOnly: false,
   },
 ];

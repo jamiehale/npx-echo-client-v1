@@ -18,7 +18,6 @@ const FixedPlugin = ({
   handleFixedClick,
   handleColorClick,
   handleImageClick,
-  rtlActive,
   fixedClasses,
 }) => {
   const [classes, setClasses] = useState("dropdown show");
@@ -31,9 +30,7 @@ const FixedPlugin = ({
   
   return (
     <div
-      className={classnames("fixed-plugin", {
-        "rtl-fixed-plugin": rtlActive
-      })}
+      className={classnames("fixed-plugin")}
     >
       <div id="fixedPluginClasses" className={fixedClasses}>
         <div onClick={handleClick}>
@@ -192,7 +189,6 @@ const FixedPlugin = ({
 FixedPlugin.propTypes = {
   bgImage: PropTypes.string,
   handleFixedClick: PropTypes.func,
-  rtlActive: PropTypes.bool,
   fixedClasses: PropTypes.string,
   bgColor: PropTypes.oneOf(["purple", "blue", "green", "orange", "red"]),
   handleColorClick: PropTypes.func,

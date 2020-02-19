@@ -11,8 +11,6 @@ import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
 // core components
-import AdminNavbarLinks from "../Navbars/AdminNavbarLinks/AdminNavbarLinks";
-import RTLNavbarLinks from "../Navbars/RTLNavbarLinks.js";
 
 import Brand from './Brand';
 import RouteIcon from './RouteIcon';
@@ -25,7 +23,6 @@ const Sidebar = ({
   color,
   image,
   routes,
-  rtlActive,
   open,
   handleDrawerToggle,
 }) => {
@@ -62,16 +59,14 @@ const Sidebar = ({
         <RouteIcon
           route={route}
           isActiveRoute={isActiveRoute(route)}
-          rtlActive={rtlActive}
         />
         <ListItemText
-          primary={rtlActive ? route.rtlName : route.name}
+          primary={route.name}
           className={
             classNames(
               classes.itemText,
               {
                 [classes.whiteFont]: isActiveRoute(route),
-                [classes.itemTextRTL]: rtlActive,
               }
             )
           }
@@ -86,12 +81,10 @@ const Sidebar = ({
       <Hidden mdUp implementation="css">
         <Drawer
           variant="temporary"
-          anchor={rtlActive ? "left" : "right"}
+          anchor="right"
           open={open}
           classes={{
-            paper: classNames(classes.drawerPaper, {
-              [classes.drawerPaperRTL]: rtlActive
-            })
+            paper: classNames(classes.drawerPaper)
           }}
           onClose={handleDrawerToggle}
           ModalProps={{
@@ -114,13 +107,11 @@ const Sidebar = ({
       </Hidden>
       <Hidden smDown implementation="css">
         <Drawer
-          anchor={rtlActive ? "right" : "left"}
+          anchor="left"
           variant="permanent"
           open
           classes={{
-            paper: classNames(classes.drawerPaper, {
-              [classes.drawerPaperRTL]: rtlActive
-            })
+            paper: classNames(classes.drawerPaper)
           }}
         >
           <Brand />
@@ -142,7 +133,6 @@ const Sidebar = ({
 };
 
 Sidebar.propTypes = {
-  rtlActive: PropTypes.bool,
   handleDrawerToggle: PropTypes.func,
   bgColor: PropTypes.oneOf(["purple", "blue", "green", "orange", "red"]),
   image: PropTypes.string,
