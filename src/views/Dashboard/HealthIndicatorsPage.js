@@ -6,25 +6,9 @@ import GridItem from '../../components/Grid/GridItem';
 import Card from "../../components/Card/Card.js";
 import CardHeader from "../../components/Card/CardHeader.js";
 import CardBody from "../../components/Card/CardBody.js";
-import Table, { SectionHeader, InputRow } from './Table';
-
-const indicators = [
-  'Number of Functional Failures',
-  'Outstanding Functional Failure Corrective Actions',
-  'ODMB (On-Line Deficient Maintenance Backlog)',
-  'SDMB (Shutdown Deficient Maintenance Backlog)',
-  'OCMB (on-line corrective maintenance backlog)',
-  'SCMB (shutdown corrective maintenance backlog)',
-  'Predefines - total of late and deferred',
-  'Number of Technical Operability Evaluations (TOEs)',
-  'Regdoc 3.1.1 Reportable Events',
-  'Operator Workarounds',
-  'Operator Burdens',
-  'TMODs > 6 months',
-  'Temporary Configuration Change Backlog > 90 days',
-  'Modification Backlog',
-  'Total System Health',
-];
+import Table from './Table';
+import SectionHeader from './SectionHeader';
+import InputRow from './InputRow';
 
 const styles = {
   cardCategoryWhite: {

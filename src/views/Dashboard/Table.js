@@ -10,7 +10,6 @@ import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
 // core components
 import styles from './tableStyle.js';
-import { Button } from '@material-ui/core';
 
 const useStyles = makeStyles(styles);
 
@@ -37,50 +36,6 @@ const CustomTable = ({
         </TableBody>
       </Table>
     </div>
-  );
-};
-
-export const SectionHeader = ({
-  title,
-}) => {
-  const classes = useStyles();
-
-  return (
-    <TableRow className={classes.tableBodyRow}>
-      <TableCell className={classes.tableSectionHeader} colspan="7">{title}</TableCell>
-    </TableRow>
-  );
-};
-
-const classFromValue = (value) => {
-  if (value < 2) {
-    return 'tableCellGreen';
-  }
-  if (value === 2) {
-    return 'tableCellWhite';
-  }
-  if (value === 3) {
-    return 'tableCellYellow';
-  }
-  return 'tableCellRed';
-};
-
-export const InputRow = ({
-  title,
-  values,
-}) => {
-  const classes = useStyles();
-
-  return (
-    <TableRow className={classes.tableBodyRow}>
-      <TableCell className={classes.tableCell}>{title}</TableCell>
-      {values.map((value, i) => (
-        <TableCell className={classNames(classes.tableCell, classes[classFromValue(value)])}>{value}</TableCell>
-      ))}
-      <TableCell className={classes.tableCell}>
-        <Button>View</Button>
-      </TableCell>
-    </TableRow>
   );
 };
 
