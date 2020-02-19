@@ -13,10 +13,6 @@ import CardBody from '../../components/Card/CardBody';
 import CardIcon from "../../components/Card/CardIcon";
 import CardFooter from "../../components/Card/CardFooter";
 
-import {
-  dailySalesChart,
-} from "../../variables/charts.js";
-
 const useStyles = makeStyles(styles);
 
 const KpiCard = ({
@@ -114,7 +110,7 @@ const Dashboard = () => {
                   data={{
                     series: [
                       {
-                        value: 5,
+                        value: 8,
                       },
                       {
                         value: 10,
@@ -123,7 +119,7 @@ const Dashboard = () => {
                         value: 12,
                       },
                       {
-                        value: 3,
+                        value: 9,
                       }
                     ]
                   }}
@@ -132,7 +128,6 @@ const Dashboard = () => {
                     width: '200px',
                     height: '200px',
                   }}
-                  listener={dailySalesChart.animation}
                 />
               </CardHeader>
               <CardBody>
