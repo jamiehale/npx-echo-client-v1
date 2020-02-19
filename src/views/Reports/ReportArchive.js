@@ -1,7 +1,6 @@
 import React from 'react';
 
-const ReportArchive = ({
-}) => (
+const ReportArchive = () => (
   <div>
   </div>
 );

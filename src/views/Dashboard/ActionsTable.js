@@ -7,7 +7,7 @@ import Table from "../../components/Table/Table.js";
 import Card from "../../components/Card/Card.js";
 import CardHeader from "../../components/Card/CardHeader.js";
 import CardBody from "../../components/Card/CardBody.js";
-import { Button, Typography } from '@material-ui/core';
+import Button from '@material-ui/core/Button';
 
 const data = [
   ['System', '2020-01-01', 'SCHMOE, Joe', '2020-01-02', '9', 'Critical'],
