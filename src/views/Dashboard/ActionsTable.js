@@ -1,11 +1,33 @@
 import React from 'react';
+import classNames from 'classnames';
 import { makeStyles } from "@material-ui/core/styles";
+import FullScreenIcon from '@material-ui/icons/Fullscreen';
+import FullScreenExitIcon from '@material-ui/icons/FullscreenExit';
 import Table from "../../components/Table/Table.js";
 import Card from "../../components/Card/Card.js";
 import CardHeader from "../../components/Card/CardHeader.js";
 import CardBody from "../../components/Card/CardBody.js";
+import { Button, Typography } from '@material-ui/core';
 
 const data = [
+  ['System', '2020-01-01', 'SCHMOE, Joe', '2020-01-02', '9', 'Critical'],
+  ['Component', '2020-01-01', 'SCHMOE, Joe', '2020-01-02', '9', 'Critical'],
+  ['Request', '2020-01-01', 'SCHMOE, Joe', '2020-01-02', '9', 'Critical'],
+  ['System', '2020-01-01', 'SCHMOE, Joe', '2020-01-02', '9', 'Critical'],
+  ['Component', '2020-01-01', 'SCHMOE, Joe', '2020-01-02', '9', 'Critical'],
+  ['Request', '2020-01-01', 'SCHMOE, Joe', '2020-01-02', '9', 'Critical'],
+  ['System', '2020-01-01', 'SCHMOE, Joe', '2020-01-02', '9', 'Critical'],
+  ['Component', '2020-01-01', 'SCHMOE, Joe', '2020-01-02', '9', 'Critical'],
+  ['Request', '2020-01-01', 'SCHMOE, Joe', '2020-01-02', '9', 'Critical'],
+  ['System', '2020-01-01', 'SCHMOE, Joe', '2020-01-02', '9', 'Critical'],
+  ['Component', '2020-01-01', 'SCHMOE, Joe', '2020-01-02', '9', 'Critical'],
+  ['Request', '2020-01-01', 'SCHMOE, Joe', '2020-01-02', '9', 'Critical'],
+  ['System', '2020-01-01', 'SCHMOE, Joe', '2020-01-02', '9', 'Critical'],
+  ['Component', '2020-01-01', 'SCHMOE, Joe', '2020-01-02', '9', 'Critical'],
+  ['Request', '2020-01-01', 'SCHMOE, Joe', '2020-01-02', '9', 'Critical'],
+  ['System', '2020-01-01', 'SCHMOE, Joe', '2020-01-02', '9', 'Critical'],
+  ['Component', '2020-01-01', 'SCHMOE, Joe', '2020-01-02', '9', 'Critical'],
+  ['Request', '2020-01-01', 'SCHMOE, Joe', '2020-01-02', '9', 'Critical'],
   ['System', '2020-01-01', 'SCHMOE, Joe', '2020-01-02', '9', 'Critical'],
   ['Component', '2020-01-01', 'SCHMOE, Joe', '2020-01-02', '9', 'Critical'],
   ['Request', '2020-01-01', 'SCHMOE, Joe', '2020-01-02', '9', 'Critical'],
@@ -49,19 +71,46 @@ const styles = {
     maxHeight: '220px',
     overflowY: 'scroll',
   },
+  fullScreenTable: {
+    height: 'calc(100vh - 200px)',
+    maxHeight: '100%',
+    overflowY: 'scroll',
+  },
+  flexCardTop: {
+    display: 'flex',
+    justifyContent: 'space-between',
+  },
+  whiteIcon: {
+    color: 'white',
+  },
 };
 
 const useStyles = makeStyles(styles);
 
-const ActionsTable = () => {
+const ActionsTable = ({
+  isExpanded,
+  onToggleExpand,
+}) => {
   const classes = useStyles();
 
   return (
     <Card>
       <CardHeader color="primary">
-        <h4 className={classes.cardTitleWhite}>Actions</h4>
+        <div className={classes.flexCardTop}>
+          <h4 className={classes.cardTitleWhite}>Actions</h4>
+          <Button onClick={onToggleExpand}>
+            {isExpanded ? (
+              <FullScreenExitIcon className={classes.whiteIcon} />
+            ) : (
+              <FullScreenIcon className={classes.whiteIcon} />
+            )}
+          </Button>
+        </div>
       </CardHeader>
-      <CardBody className={classes.scrollingTable}>
+      <CardBody className={classNames({
+        [classes.scrollingTable]: !isExpanded,
+        [classes.fullScreenTable]: isExpanded,
+      })}>
         <Table
           tableHeaderColor="primary"
           tableHead={['Type', 'Date Received', 'By Whom', 'Date Due', 'Priority', 'Labelling Section']}
