@@ -156,14 +156,16 @@ const sidebarStyle = theme => ({
   itemText: {
     ...defaultFont,
     margin: "0",
-    lineHeight: "30px",
-    fontSize: "14px",
+    lineHeight: "20px",
+    textAlign: 'center',
+    fontSize: "12px",
     color: blackColor,
+    minHeight: '4.5em',
     [theme.breakpoints.up('md')]: {
       fontSize: '12px',
     },
     [theme.breakpoints.down('sm')]: {
-      fontSize: '14px',
+      fontSize: '12px',
     },
   },
   whiteFont: {
