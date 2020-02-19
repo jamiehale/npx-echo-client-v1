@@ -78,6 +78,18 @@ const tableStyle = theme => ({
     outline: "none",
     verticalAlign: "middle",
     fontSize: "1.25rem",
+  },
+  tableCellGreen: {
+    backgroundColor: '#70ad47',
+  },
+  tableCellWhite: {
+    backgroundColor: '#ffffff',
+  },
+  tableCellYellow: {
+    backgroundColor: '#ffc000'
+  },
+  tableCellRed: {
+    backgroundColor: '#e74c3c',
   }
 });
 

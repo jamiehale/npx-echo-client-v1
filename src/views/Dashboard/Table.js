@@ -52,6 +52,19 @@ export const SectionHeader = ({
   );
 };
 
+const classFromValue = (value) => {
+  if (value < 2) {
+    return 'tableCellGreen';
+  }
+  if (value === 2) {
+    return 'tableCellWhite';
+  }
+  if (value === 3) {
+    return 'tableCellYellow';
+  }
+  return 'tableCellRed';
+};
+
 export const InputRow = ({
   title,
   values,
@@ -62,7 +75,7 @@ export const InputRow = ({
     <TableRow className={classes.tableBodyRow}>
       <TableCell className={classes.tableCell}>{title}</TableCell>
       {values.map((value, i) => (
-        <TableCell className={classes.tableCell}>{value}</TableCell>
+        <TableCell className={classNames(classes.tableCell, classes[classFromValue(value)])}>{value}</TableCell>
       ))}
       <TableCell className={classes.tableCell}>
         <Button>View</Button>
