@@ -1,12 +1,13 @@
 import Dashboard from "@material-ui/icons/Dashboard";
 import Person from "@material-ui/icons/Person";
-import LibraryBooks from "@material-ui/icons/LibraryBooks";
-import BubbleChart from "@material-ui/icons/BubbleChart";
 import LocationOn from "@material-ui/icons/LocationOn";
 import Notifications from "@material-ui/icons/Notifications";
 import Language from "@material-ui/icons/Language";
 import SettingsIcon from '@material-ui/icons/Settings';
 import SearchIcon from '@material-ui/icons/Search';
+import AddIcon from '@material-ui/icons/Add';
+import TrendingUpIcon from '@material-ui/icons/TrendingUp';
+import CreateIcon from '@material-ui/icons/Create';
 // core components/views for Admin layout
 import DashboardPage from "./views/Dashboard/Dashboard.js";
 import UserProfile from "./views/UserProfile/UserProfile.js";
@@ -53,7 +54,7 @@ const dashboardRoutes = [
   },
   {
     path: "/dashboard",
-    name: "ECHO",
+    name: "Dashboard",
     rtlName: "لوحة القيادة",
     icon: Dashboard,
     component: DashboardPage,
@@ -61,37 +62,37 @@ const dashboardRoutes = [
     displayOnMobileOnly: false,
   },
   {
-    path: "/user",
-    name: "2",
+    path: "/reports/new",
+    name: "Add New Report",
     rtlName: "ملف تعريفي للمستخدم",
-    icon: Person,
+    icon: AddIcon,
     component: UserProfile,
     layout: "/admin",
     displayOnMobileOnly: false,
   },
   {
-    path: "/table",
-    name: "3",
+    path: "/reports",
+    name: "Generate Report",
     rtlName: "قائمة الجدول",
-    icon: "content_paste",
+    icon: SearchIcon,
     component: TableList,
     layout: "/admin",
     displayOnMobileOnly: false,
   },
   {
-    path: "/typography",
-    name: "4",
+    path: "/reports/live",
+    name: "Live Health Report",
     rtlName: "طباعة",
-    icon: LibraryBooks,
+    icon: TrendingUpIcon,
     component: Typography,
     layout: "/admin",
     displayOnMobileOnly: false,
   },
   {
-    path: "/icons",
-    name: "5",
+    path: "/reports/improvement-actions",
+    name: "SHIP/CHIP",
     rtlName: "الرموز",
-    icon: BubbleChart,
+    icon: CreateIcon,
     component: Icons,
     layout: "/admin",
     displayOnMobileOnly: false,

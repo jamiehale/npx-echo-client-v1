@@ -10,18 +10,14 @@ import routes from '../../routes';
 
 import styles from './adminStyle.js';
 
-const switchRoutes = routes.map((route, i) => {
-  if (route.layout === '/admin') {
-    return (
-      <Route
-        path={route.layout + route.path}
-        component={route.component}
-        key={route.layout + route.path}
-      />
-    );
-  }
-  return null;
-});
+const switchRoutes = routes.filter(route => route.layout === '/admin')
+  .map((route, i) => (
+    <Route
+      path={route.layout + route.path}
+      component={route.component}
+      key={route.layout + route.path}
+    />
+  ));
 
 const useStyles = makeStyles(styles);
 
