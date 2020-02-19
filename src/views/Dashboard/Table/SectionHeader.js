@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import TableRow from '@material-ui/core/TableRow';
 import TableCell from '@material-ui/core/TableCell';
 
-import styles from './tableStyle.js';
+import styles from './tableStyle';
 
 const useStyles = makeStyles(styles);
 

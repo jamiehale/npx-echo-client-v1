@@ -6,9 +6,9 @@ import GridItem from '../../components/Grid/GridItem';
 import Card from "../../components/Card/Card.js";
 import CardHeader from "../../components/Card/CardHeader.js";
 import CardBody from "../../components/Card/CardBody.js";
-import Table from './Table';
-import SectionHeader from './SectionHeader';
-import InputRow from './InputRow';
+import Table from './Table/Table';
+import SectionHeader from './Table/SectionHeader';
+import InputRow from './Table/InputRow';
 
 const styles = {
   cardCategoryWhite: {
