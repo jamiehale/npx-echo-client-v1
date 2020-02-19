@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import classNames from 'classnames';
 // @material-ui/core components
 import { makeStyles } from '@material-ui/core/styles';
@@ -37,24 +36,6 @@ const CustomTable = ({
       </Table>
     </div>
   );
-};
-
-CustomTable.defaultProps = {
-  tableHeaderColor: 'gray'
-};
-
-CustomTable.propTypes = {
-  tableHeaderColor: PropTypes.oneOf([
-    'warning',
-    'primary',
-    'danger',
-    'success',
-    'info',
-    'rose',
-    'gray'
-  ]),
-  tableHead: PropTypes.arrayOf(PropTypes.string),
-  tableData: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.string))
 };
 
 export default CustomTable;

@@ -42,6 +42,8 @@ const styles = {
 
 const useStyles = makeStyles(styles);
 
+const unitsFromFacility = facility => (facility === 'a' ? [0, 1, 2, 3, 4] : [0, 5, 6, 7, 8]);
+
 const HealthIndicatorsPage = ({
   report,
   onSubmit,
@@ -64,7 +66,7 @@ const HealthIndicatorsPage = ({
                 <h4 className={classes.cardTitleWhite}>Station Summary</h4>
               </CardHeader>
               <CardBody>
-                <Table units={[0,1,2,3,4]}>
+                <Table units={unitsFromFacility(report.facility)}>
                   <SectionHeader title="Functional Failures" />
                   <InputRow title="Number of Functional Failures" values={[2, 1, 4, 0, 3]} />
                   <InputRow title="Outstanding Functional Failure Corrective Actions" values={[2, 1, 4, 0, 3]} />
