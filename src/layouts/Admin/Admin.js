@@ -10,8 +10,6 @@ import routes from '../../routes';
 
 import styles from './adminStyle.js';
 
-import logo from '../../assets/img/reactlogo.png';
-
 const switchRoutes = routes.map((route, i) => {
   if (route.layout === '/admin') {
     return (
@@ -47,8 +45,6 @@ const Admin = (props) => {
     <div className={classes.wrapper}>
       <Sidebar
         routes={routes}
-        logoText="ECHO"
-        logo={logo}
         handleDrawerToggle={handleDrawerToggle}
         open={mobileOpen}
         color="blue"

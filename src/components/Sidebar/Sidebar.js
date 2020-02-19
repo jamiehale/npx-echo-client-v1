@@ -23,9 +23,7 @@ const useStyles = makeStyles(styles);
 
 const Sidebar = ({
   color,
-  logo,
   image,
-  logoText,
   routes,
   rtlActive,
   open,
@@ -100,11 +98,7 @@ const Sidebar = ({
             keepMounted: true // Better open performance on mobile.
           }}
         >
-          <Brand
-            logo={logo}
-            logoText={logoText}
-            rtlActive={rtlActive}
-          />
+          <Brand />
           <div className={classes.sidebarWrapper}>
             <List className={classes.list}>
               {links}
@@ -129,11 +123,7 @@ const Sidebar = ({
             })
           }}
         >
-          <Brand
-            logo={logo}
-            logoText={logoText}
-            rtlActive={rtlActive}
-          />
+          <Brand />
           <div className={classes.sidebarWrapper}>
             <List className={classes.list}>
               {links}
@@ -155,9 +145,7 @@ Sidebar.propTypes = {
   rtlActive: PropTypes.bool,
   handleDrawerToggle: PropTypes.func,
   bgColor: PropTypes.oneOf(["purple", "blue", "green", "orange", "red"]),
-  logo: PropTypes.string,
   image: PropTypes.string,
-  logoText: PropTypes.string,
   routes: PropTypes.arrayOf(PropTypes.object),
   open: PropTypes.bool
 };
