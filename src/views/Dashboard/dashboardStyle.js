@@ -94,7 +94,14 @@ const dashboardStyle = {
     "& g.ct-series-d > path": {
       fill: '#e74c3c',
     },
-  }
+    "& g:nth-child(5) > text": {
+      fill: 'white',
+      fontWeight: '400',
+    },
+    "& g:nth-child(5) > text:nth-child(2)": {
+      fill: 'black',
+    }
+  },
 };
 
 export default dashboardStyle;
