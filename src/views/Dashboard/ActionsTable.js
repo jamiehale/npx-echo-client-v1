@@ -95,7 +95,7 @@ const ActionsTable = ({
 
   return (
     <Card>
-      <CardHeader color="primary">
+      <CardHeader color="info">
         <div className={classes.flexCardTop}>
           <h4 className={classes.cardTitleWhite}>Actions</h4>
           <Button onClick={onToggleExpand}>
