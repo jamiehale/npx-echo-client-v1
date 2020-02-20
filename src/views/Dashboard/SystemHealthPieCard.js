@@ -81,7 +81,7 @@ const SystemHealthPieCard = () => {
           <GridItem xs={12}>
             <LegendItem colour="green">Low Safety/Security Significance</LegendItem>
             <LegendItem colour="white" drawBorder>Low to Moderate Safety/Security Significance</LegendItem>
-            <LegendItem colour="yellow">Low to substantial Safety/Security Significance</LegendItem>
+            <LegendItem colour="yellow">Substantial Safety/Security Significance</LegendItem>
             <LegendItem colour="red">High Safety/Security Significance</LegendItem>
           </GridItem>
         </GridContainer>
