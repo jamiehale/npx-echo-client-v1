@@ -42,6 +42,15 @@ const dashboardStyle = {
     paddingTop: "10px",
     marginBottom: "0"
   },
+  cardTitlePieChart: {
+    color: grayColor[0],
+    margin: "0",
+    fontSize: "14px",
+    marginTop: "0",
+    paddingTop: "10px",
+    marginBottom: "0",
+    textAlign: 'left',
+  },
   cardCategoryWhite: {
     color: "rgba(" + hexToRgb(whiteColor) + ",.62)",
     margin: "0",

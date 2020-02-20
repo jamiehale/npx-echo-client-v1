@@ -47,7 +47,7 @@ const SystemHealthPieCard = () => {
         <CardIcon color="danger">
           <i className="material-icons">pie_chart</i>
         </CardIcon>
-        <h4 className={classes.cardCategory}>Total System Health Breakdown</h4>
+        <h4 className={classes.cardTitlePieChart}>Total System Health Breakdown</h4>
       </CardHeader>
       <CardBody className={classes.systemHealthPie}>
         <ChartistGraph
