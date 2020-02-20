@@ -20,10 +20,8 @@ const Container = styled.div`
   i {
     margin-right: 4px;
     color: ${({colour}) => colour};
-    ${({drawBorder}) => drawBorder && `
-    border: 1px solid grey;
+    border: 1px solid ${({drawBorder}) => (drawBorder ? 'grey' : 'white')};
     border-radius: 50%;
-    `}
   }
 `;
 
