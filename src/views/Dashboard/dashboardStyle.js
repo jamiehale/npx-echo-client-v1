@@ -93,15 +93,19 @@ const dashboardStyle = {
     },
     "& g.ct-series-a > path": {
       fill: '#70ad47',
+      stroke: 'black'
     },
     "& g.ct-series-b > path": {
       fill: '#ffffff',
+      stroke: 'black'
     },
     "& g.ct-series-c > path": {
       fill: '#ffc000',
+      stroke: 'black'
     },
     "& g.ct-series-d > path": {
       fill: '#e74c3c',
+      stroke: 'black'
     },
     "& g:nth-child(5) > text": {
       fill: 'white',
