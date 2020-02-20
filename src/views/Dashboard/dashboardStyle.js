@@ -93,19 +93,19 @@ const dashboardStyle = {
     },
     "& g.ct-series-a > path": {
       fill: '#70ad47',
-      stroke: 'black'
+      stroke: 'rgba(0,0,0,0.5)'
     },
     "& g.ct-series-b > path": {
       fill: '#ffffff',
-      stroke: 'black'
+      stroke: 'rgba(0,0,0,0.5)'
     },
     "& g.ct-series-c > path": {
       fill: '#ffc000',
-      stroke: 'black'
+      stroke: 'rgba(0,0,0,0.5)'
     },
     "& g.ct-series-d > path": {
       fill: '#e74c3c',
-      stroke: 'black'
+      stroke: 'rgba(0,0,0,0.5)'
     },
     "& g:nth-child(5) > text": {
       fill: 'white',
@@ -114,6 +114,20 @@ const dashboardStyle = {
     "& g:nth-child(5) > text:nth-child(2)": {
       fill: 'black',
     }
+  },
+  systemHealthLine: {
+    "& g.ct-series-a > .ct-point": {
+      stroke: '#ef5350'
+    },
+    "& g.ct-series-a > .ct-line": {
+      stroke: '#ef5350'
+    },
+    "& g.ct-series-b > .ct-point": {
+      stroke: '#26c6da'
+    },
+    "& g.ct-series-b > .ct-line": {
+      stroke: '#26c6da'
+    },
   },
 };
 

@@ -6,6 +6,7 @@ import GridContainer from "../../components/Grid/GridContainer.js";
 import ActionsTable from './ActionsTable';
 import KpiCard from './KpiCard';
 import SystemHealthPieCard from './SystemHealthPieCard';
+import SystemHealthLineCard from './SystemHealthLineCard';
 
 const ReponsibleSystemsIcon = () => (
   <i className="fas fa-project-diagram"></i>
@@ -83,6 +84,9 @@ const Dashboard = () => {
           </GridItem>
           <GridItem xs={12} sm={12} md={6}>
             <SystemHealthPieCard />
+          </GridItem>
+          <GridItem xs={12} sm={12} md={6}>
+            <SystemHealthLineCard />
           </GridItem>
         </>
       )}
