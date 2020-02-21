@@ -16,7 +16,7 @@ const Table = styled(UnstyledTable)`
 `;
 
 const TableHead = styled(UnstyledTableHead)`
-  color: ${({theme}) => theme.legacyColours.primary[0]};
+  color: ${({theme}) => theme.legacyColours.info[0]};
 `;
 
 const TableHeadRow = styled(TableRow)`
