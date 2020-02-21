@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import styled from 'styled-components';
 import classNames from 'classnames';
 import { makeStyles } from "@material-ui/core/styles";
 import FullScreenIcon from '@material-ui/icons/Fullscreen';
@@ -12,6 +13,8 @@ import CardBody from "../../components/Card/CardBody.js";
 import Button from '@material-ui/core/Button';
 import Checkbox from '@material-ui/core/Checkbox';
 
+const statusFromId = id => (['green', 'white', 'yellow', 'red'][id % 4]);
+
 const action = (id, type) => ({
   id,
   escalated: false,
@@ -20,7 +23,7 @@ const action = (id, type) => ({
   byWhom: 'SCHMOE, Joe',
   dateDue: '2020-01-02',
   priority: '9',
-  systemHealthIndication: 'Critical',
+  status: statusFromId(id),
 });
 
 const allActions = [
@@ -110,6 +113,22 @@ const useActions = (initialActions) => {
   ];
 };
 
+const StatusBlock = styled.div`
+  background-color: ${({theme, status}) => theme.statusColours[status]};
+  width: ${({theme}) => theme.spacing[6]}px;
+  height: ${({theme}) => theme.spacing[4]}px;
+  border: 1px solid ${({theme, status}) => theme.statusBorders[status]};
+  border-radius: 6px;
+`;
+
+const StatusTableCell = ({
+  status,
+}) => (
+  <TableCell>
+    <StatusBlock status={status} />
+  </TableCell>
+);
+
 const ActionsTable = ({
   isExpanded,
   onToggleExpand,
@@ -152,7 +171,7 @@ const ActionsTable = ({
               <TableCell>{row.byWhom}</TableCell>
               <TableCell>{row.dateDue}</TableCell>
               <TableCell>{row.priority}</TableCell>
-              <TableCell>{row.systemHealthIndication}</TableCell>
+              <StatusTableCell status={row.status} />
             </TableRow>
           ))}
         </Table>

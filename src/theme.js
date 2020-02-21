@@ -28,6 +28,18 @@ const theme = {
     defaultFontWeight: 300,
     defaultLineHeight: '1.5em',
   },
+  statusColours: {
+    green: '#70ad47',
+    white: '#ffffff',
+    yellow: '#ffc000',
+    red: '#e74c3c',
+  },
+  statusBorders: {
+    green: 'transparent',
+    white: 'grey',
+    yellow: 'transparent',
+    red: 'transparent',
+  },
 };
 
 export default theme;
