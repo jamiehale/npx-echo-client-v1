@@ -4,7 +4,7 @@ import UnstyledTableRow from '@material-ui/core/TableRow';
 const TableRow = styled(UnstyledTableRow)`
   height: 48px;
   display: table-row;
-  verticalAlign: middle;
+  vertical-align: middle;
 `;
 
 export default TableRow;

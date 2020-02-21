@@ -7,12 +7,12 @@ import TableCell from './TableCell';
 import TableBody from "@material-ui/core/TableBody";
 
 const Table = styled(UnstyledTable)`
-  marginBottom: 0;
+  margin-bottom: 0;
   width: 100%;
-  maxWidth: 100%;
-  backgroundColor: transparent;
-  borderSpacing: 0;
-  borderCollapse: collapse;
+  max-width: 100%;
+  background-color: transparent;
+  border-spacing: 0;
+  border-collapse: collapse;
 `;
 
 const TableHead = styled(UnstyledTableHead)`
@@ -29,8 +29,8 @@ const TableHeadCell = styled(TableCell)`
 
 const Container = styled.div`
   width: 100%;
-  marginTop: ${({theme}) => theme.spacing[3]}px;
-  overflowX: auto;
+  margin-top: ${({theme}) => theme.spacing[3]}px;
+  overflow-x: auto;
 `;
 
 const CustomTable = ({
