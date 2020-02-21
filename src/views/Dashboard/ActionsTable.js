@@ -12,6 +12,7 @@ import CardHeader from "../../components/Card/CardHeader.js";
 import CardBody from "../../components/Card/CardBody.js";
 import Button from '@material-ui/core/Button';
 import Checkbox from '@material-ui/core/Checkbox';
+import StatusBlock from './StatusBlock';
 
 const statusFromId = id => (['green', 'white', 'yellow', 'red'][id % 4]);
 
@@ -112,14 +113,6 @@ const useActions = (initialActions) => {
     escalate,
   ];
 };
-
-const StatusBlock = styled.div`
-  background-color: ${({theme, status}) => theme.statusColours[status]};
-  width: ${({theme}) => theme.spacing[6]}px;
-  height: ${({theme}) => theme.spacing[4]}px;
-  border: 1px solid ${({theme, status}) => theme.statusBorders[status]};
-  border-radius: 6px;
-`;
 
 const StatusTableCell = ({
   status,
