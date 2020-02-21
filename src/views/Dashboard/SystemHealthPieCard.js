@@ -79,10 +79,10 @@ const SystemHealthPieCard = () => {
             <h4 className={classes.cardCategory}>LEGEND</h4>
           </GridItem>
           <GridItem xs={12}>
-            <LegendItem colour="green">Low Safety/Security Significance</LegendItem>
+            <LegendItem colour="#70ad47">Low Safety/Security Significance</LegendItem>
             <LegendItem colour="white" drawBorder>Low to Moderate Safety/Security Significance</LegendItem>
-            <LegendItem colour="yellow">Substantial Safety/Security Significance</LegendItem>
-            <LegendItem colour="red">High Safety/Security Significance</LegendItem>
+            <LegendItem colour="#ffc000">Substantial Safety/Security Significance</LegendItem>
+            <LegendItem colour="#e74c3c">High Safety/Security Significance</LegendItem>
           </GridItem>
         </GridContainer>
       </CardFooter>
